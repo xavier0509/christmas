@@ -1,0 +1,71 @@
+@charset "utf-8";
+body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+#blackbg{
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+    -moz-opacity: 0.8;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    z-index: 22;
+}
+#deviceready{
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: skyblue;
+    background: url('http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/bgimg.jpg');
+}
+#mainbox{
+    width: 1920px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: none;
+
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#rulePage{
+    width:1920px;
+    height:1080px;
+    overflow: hidden;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/rule/rulebg.jpg");
+    display: none;
+}
+#ruleInner{
+    width: 1772px;
+    height: 893px;
+    position: absolute;
+    top:157px;
+    left:104px;
+    overflow: auto;
+}
+#needUpdate{
+    width: 925px;
+    height:446px;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+    display: none;
+    z-index: 5;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/needup.png");
+}
