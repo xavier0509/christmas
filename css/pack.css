@@ -1,0 +1,262 @@
+@charset "utf-8";
+body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+#blackbg{
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+    -moz-opacity: 0.8;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    z-index: 22;
+}
+#deviceready{
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: skyblue;
+    background: url('http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/bgimg.jpg');
+}
+#mainbox{
+    width: 1920px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: none;
+
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#rulePage{
+    width:1920px;
+    height:1080px;
+    overflow: hidden;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/rule/rulebg.jpg");
+    display: none;
+}
+#ruleInner{
+    width: 1772px;
+    height: 893px;
+    position: absolute;
+    top:157px;
+    left:104px;
+    overflow: auto;
+}
+#needUpdate{
+    width: 925px;
+    height:446px;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+    display: none;
+    z-index: 5;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/needup.png");
+}
+
+
+
+
+
+
+
+
+
+
+.gotobtn{
+    width: 600px;
+    height:100px;
+    position: relative;
+    top:200px;
+    font-size: 56px;
+    line-height: 56px;
+    text-align: center;
+    background-color: lightyellow;
+    margin-top: 20px;
+}
+.gotobtn.btnFocus{
+    background-color: #dc443d;
+}
+
+#adStation{
+    width: 600px;
+    height:400px;
+    position: absolute;
+    top:200px;
+    left:500px;
+    border: 1px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#_jrbuyZone{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 1920px;
+    height:1080px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/finalbuyzonebg.jpg");
+    overflow: hidden;
+    display: none;
+}
+#_jrbuyZoneGuding{
+    width: 1768px;
+    height:765px;
+    position: absolute;
+    left:69px;
+    top:289px;
+    overflow: hidden;
+}
+#_jrbuyZoneInner{
+    width: 1768px;
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#_jrpackzone{
+    width: 1768px;
+    height: 474px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+#_jrpackword{
+    width: 542px;
+    height: 62px;
+    position: absolute;
+    top:0;
+    left:10px;
+    right: 0;
+    margin: auto;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/mayliketitle.png");
+}
+#_jrrecommendword{
+    width: 760px;
+    height: 62px;
+    position: absolute;
+    top:0;
+    left:10px;
+    right: 0;
+    margin: auto;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/superPrice.png");
+}
+#_jrpackbox,#_jrrecommendbox{
+    width: 1768px;
+    position: relative;
+    top:70px;
+    padding-left: 33px;
+}
+._jrgoodsbox{
+    height: 404px;
+    width: 374px;
+    display: inline-block;
+    margin-left: -26px;
+    margin-top: -17px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+._jrborder{
+    height: 404px;
+    width: 374px;
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/focus.png");
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+._jrborder.special{
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/morefocus.png");
+}
+._jrgoods{
+    height: 318px;
+    width: 318px;
+    margin-left: 15px;
+    margin-top: 40px;
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/packbg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.couponword{
+    width: 291px;
+    position: absolute;
+    bottom: 142px;
+    left: 29px;
+    background-color: #dc443d;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #ffff00;
+    text-align: center;
+}
+.goodsName{
+    font-size: 24px;
+    color: #883800;
+    line-height: 24px;
+    position: absolute;
+    top: 280px;
+    left:28px;
+}
+.nowPrice{
+    font-size: 24px;
+    color: #dc443d;
+    position: absolute;
+    left:28px;
+    top:305px;
+}
+.oldPrice{
+    font-size: 20px;
+    color: #883800;
+    position: absolute;
+    left:128px;
+    top:309px;
+}
+#_jrrecommendzone{
+    width: 1768px;
+    height: 400px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/*._jrcoocaabtn.btnFocus{*/
+    /*opacity: 1;*/
+    /*box-shadow: 0px 0px 0px 0px black;*/
+    /*transform: scale(1.08, 1.08);*/
+    /*-ms-transform: scale(1.08, 1.08);*/
+    /*!* IE 9 *!*/
+    /*-webkit-transform: scale(1.08, 1.08);*/
+    /*!* Safari 和 Chrome *!*/
+    /*-o-transform: scale(1.08, 1.08);*/
+    /*!* Opera *!*/
+    /*-moz-transform: scale(1.08, 1.08);*/
+    /*z-index: 2;*/
+/*}*/
+

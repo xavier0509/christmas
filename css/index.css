@@ -35,7 +35,7 @@ body {
     position: absolute;
     top:0px;
     left:0px;
-    display: none;
+    /*display: none;*/
 
     transition:all 0.2s;
     -moz-transition:all 0.2s;
@@ -68,4 +68,58 @@ body {
     display: none;
     z-index: 5;
     background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/needup.png");
+}
+
+#topBanner{
+    width: 1772px;
+    height: 300px;
+    background-color: lightyellow;
+    position: relative;
+    left:0;
+    right: 0;
+    top:0;
+    margin: auto;
+}
+#street{
+    width: 1772px;
+    background-color: lightskyblue;
+    position: relative;
+    left:0;
+    right: 0;
+    top:100px;
+    margin: auto;
+}
+.panel{
+    width: 1772px;
+    height:300px;
+    margin-bottom: 20px;
+    background-color: lightgreen;
+}
+.block{
+    height: 262px;
+    width:450px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    display: inline-block;
+    background-image: url("http://img.sky.fs.skysrt.com/1030/2-yingshi3.jpg");
+    padding: 4px;
+}
+.panel .block:nth-child(1){
+    margin-left: 0;
+}
+.coocaabtn.btnFocus{
+    border: 4px solid white;
+    padding: 0px;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 0px black;
+    transform: scale(1.08, 1.08);
+    -ms-transform: scale(1.08, 1.08);
+    /* IE 9 */
+    -webkit-transform: scale(1.08, 1.08);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1.08, 1.08);
+    /* Opera */
+    -moz-transform: scale(1.08, 1.08);
+    z-index: 2;
 }

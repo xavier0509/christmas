@@ -35,6 +35,7 @@ function hasLogin(needQQ,fresh,ifFirst) {
                 nick_name = message.nick_name;
                 coocaaosapi.getUserAccessToken(function(message) {
                     access_token = message.accesstoken;
+                    console.log("accesstoken==================="+access_token);
                     if (exterInfo == "[]") {
                         exterInfo = '[{}]';
                     } else {}
@@ -127,19 +128,19 @@ function hasLogin(needQQ,fresh,ifFirst) {
                             showFlag = access_token
                         }
                     }
+                    if(fresh == "ranking"){//=============zy不移位置获取不到
+                        rankingList();
+                        needInit = true;
+                    } else if(fresh){
+                        if(ifFirst){
+                            showPage(true,false);
+                        }else{
+                            showPage(false,true);
+                        }
+                    }
                 }, function(error) { 
                     console.log(error);
                 });
-                if(fresh == "ranking"){//=============zy不移位置获取不到
-                    rankingList();
-                    needInit = true;
-                } else if(fresh){
-                    if(ifFirst){
-                        showPage(true,false);
-                    }else{
-                        showPage(false,true);
-                    }
-                }
             }, function(error) { console.log(error); });
         }
 

@@ -1191,46 +1191,13 @@ function initGameStatus(resume) {
 function showPage(first,resume) {
     console.log("$$$$$$$$$$$$$$$$$$===="+first+"==========="+resume);
     console.log("---"+macAddress+"------"+TVchip+"-----"+TVmodel+"------"+emmcId+"--------"+activityId + "---------"+access_token+"-------"+cOpenId);
-    var data = JSON.stringify({"goodsId":"14773","token":access_token,"cudid":activityId+"_"+macAddress});
-    $.ajax({
-        type: "get",
-        async: true,
-        url: "http://beta.api.tvshop.coocaa.com/cors/tvCartAPI/packGoodsList",
-        data: {param:data},
-        dataType: "json",
-        success: function(data) {
-            console.log("------------packGoodsList----result-------------"+JSON.stringify(data));
-
-        },
-        error: function(error) {
-            console.log("--------访问失败" + JSON.stringify(error));
-        }
-    });
+    // getAddPack();
 }
 
 
 
 //排行榜
 function rankingList(){}
-
-//打包接口
-function addpackage() {
-    var data = JSON.stringify({"goodsId":"14773","token":access_token,"cudid":activityId+"_"+macAddress});
-    $.ajax({
-        type: "get",
-        async: true,
-        url: "http://beta.api.tvshop.coocaa.com/cors/tvCartAPI/addCartFromAct",
-        data: {param:data},
-        dataType: "json",
-        success: function(data) {
-            console.log("------------addPackage----result-------------"+JSON.stringify(data));
-
-        },
-        error: function(error) {
-            console.log("--------访问失败" + JSON.stringify(error));
-        }
-    });
-}
 
 
 

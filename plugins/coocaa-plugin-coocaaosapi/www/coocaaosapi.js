@@ -29,23 +29,30 @@ cordova.define("coocaaosapi", function(require, exports, module) {
         console.log("------------>CoocaaOSApi()");
         startapp.check("com.coocaa.app_browser", function(message) { /* success */
             console.log("新版浏览器存在：" + JSON.stringify(message));
-            hasNewBrowers = true;
+            browserVersion = message.versionCode
         }, function(message) {
             console.log("新版浏览器不存在：" + JSON.stringify(message));
-            hasNewBrowers = false;
         });
 
         startapp.check("com.tianci.user", function(message) { /* success */
             console.log("账户应用版本：" + JSON.stringify(message));
             accountVersion = message.versionCode
+        }, function(message) {});startapp.check("com.tianci.user", function(message) { /* success */
+            console.log("账户应用版本：" + JSON.stringify(message));
+            accountVersion = message.versionCode
         }, function(message) {});
 
-        startapp.check("com.coocaa.ie", function(message) { /* success */
-            console.log("游戏版本："+JSON.stringify(message));
-            gameVersion = message.versionCode
+        startapp.check("com.coocaa.activecenter", function(message) { /* success */
+            console.log("活动中心版本：" + JSON.stringify(message));
+            activityCenterVersion = message.versionCode
+        }, function(message) {});
+
+        startapp.check("com.coocaa.mall", function(message) { /* success */
+            console.log("商城版本："+JSON.stringify(message));
+            mallVersion = message.versionCode
         },function (message) {
-            console.log("游戏版本不存在："+JSON.stringify(message));
-            gameVersion = 0;
+            console.log("商城版本不存在："+JSON.stringify(message));
+            mallVersion = 0;
         });
 
         startapp.check("com.tianci.movieplatform", function(message) { /* success */
@@ -1198,6 +1205,31 @@ cordova.define("coocaaosapi", function(require, exports, module) {
     CoocaaOSApi.prototype.startRedGame = function(chance,userKeyId,success,error){
         argscheck.checkArgs('ssff','CoocaaOSApi.startRedGame',arguments);
         startapp.start([["action", "coocaa.intent.action.ie.games.2018D11","com.coocaa.ie"],[{chance:chance},{userKeyId:userKeyId}]], success,error);
+    }
+
+    /*
+     *获取广告数据【图文广告传appid+game_id,game_scene,game_panel,game_position】【视频广告传appid+activity_id,task_id,】
+     */
+    CoocaaOSApi.prototype.getAdData = function(appid,game_id,game_scene,game_panel,game_position,activity_id,task_id,success,error){
+        argscheck.checkArgs('sssssssff','CoocaaOSApi.getAdData',arguments);
+        exec(success,error,'CoocaaOSApi','callAdBusiness',[{'action':'getAdData'},{'appid':appid,'params':{'game_id':game_id,'game_scene':game_scene,'game_panel':game_panel,'game_position':game_position,'activity_id':activity_id,'task_id':task_id}}]);
+    }
+
+    /*
+     *提交内部广告数据
+     */
+    CoocaaOSApi.prototype.submitAdData = function(ad_base_info,game_id,game_scene,game_panel,game_position,activity_id,task_id,success,error){
+        argscheck.checkArgs('sssssssff','CoocaaOSApi.submitAdData',arguments);
+        exec(success,error,'CoocaaOSApi','callAdBusiness',[{'action':'submitCoocaaData'},{'baseinfo':ad_base_info,'eventid':'ad_show','params':{'game_id':game_id,'game_scene':game_scene,'game_panel':game_panel,'game_position':game_position,'activity_id':activity_id,'task_id':task_id}}]);
+    }
+
+    /*
+     *提交第三方广告数据
+     */
+    CoocaaOSApi.prototype.submitThirdAdData = function(url,scheduleId,orderId,adSpaceId,success,error){
+        argscheck.checkArgs('ssssff','CoocaaOSApi.submitThirdAdData',arguments);
+        var trackUrl = JSON.parse(url);
+        exec(success,error,'CoocaaOSApi','callAdBusiness',[{'action':'submitThirdData'},{'scheduleId':scheduleId,'orderId':orderId,'adSpaceId':adSpaceId}, {'trackUrl':trackUrl}]);
     }
 
     module.exports = new CoocaaOSApi();
