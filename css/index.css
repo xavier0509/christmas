@@ -28,7 +28,7 @@ body {
     height: 1080px;
     overflow: hidden;
     background: skyblue;
-    background: url('http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/bgimg.jpg');
+    background: url('http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/bg.jpg');
 }
 #mainbox{
     width: 1920px;
@@ -45,15 +45,15 @@ body {
     width:1920px;
     height:1080px;
     overflow: hidden;
-    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/rule/rulebg.jpg");
+    /*background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/rule/rulebg.jpg");*/
     display: none;
 }
 #ruleInner{
-    width: 1772px;
-    height: 893px;
+    width: 1920px;
+    height: 1080px;
     position: absolute;
-    top:157px;
-    left:104px;
+    top:0px;
+    left:0px;
     overflow: auto;
 }
 #needUpdate{
@@ -70,19 +70,130 @@ body {
     background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/double11/mainpage/needup.png");
 }
 
-#topBanner{
-    width: 1772px;
-    height: 300px;
-    background-color: lightyellow;
-    position: relative;
-    left:0;
-    right: 0;
+#toplogo{
+    width: 423px;
+    height: 91px;
+    position: absolute;
+    top:7px;
+    left:81px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/toplog.png");
+}
+.topbtn{
+    width: 250px;
+    height:104px;
+    position: absolute;
     top:0;
+}
+#mygift{
+    left:1115px; 
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/mygift.png");
+}
+#packlist{
+    left:1364px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/packlist.png");
+}
+#rule{
+    left:1611px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/rule.png");
+}
+.topBtnBorder{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 250px;
+    height: 104px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/border.png");
+    display: none;
+}
+.btnFocus .topBtnBorder{
+    display: block;
+}
+#leftRing,#rightRing{
+    width: 96px;
+    height: 90px;
+    position: absolute;
+    top:71px;
+    left:17px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/left.png");
+    z-index: 2;
+}
+#rightRing{
+    left:1811px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/right.png");
+}
+#topBanner{
+    width: 1822px;
+    height: 564px;
+    position: relative;
+    left:49px;
+    top: 53px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/banner.png");
+}
+#topBanner.btnFocus{
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/borderbanner.png");
+}
+#innerBanner{
+    width:1760px;
+    height:440px;
+    /*border:4px solid;*/
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 90px;
     margin: auto;
+    background-color: red;
+}
+#fakeNews,#koiNews{
+    width:600px;
+    height:50px;
+    font-size: 36px;
+    line-height: 50px;
+    position: absolute;
+    top:50px;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align: center;
+    overflow:hidden;
+}
+#koiNews{
+    top:0;
+}
+#fakeNewsul,#koiNewsul{
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#fakeNewsul li,#koiNewsul li{
+    height: 50px;
+    line-height: 50px;
+}
+#hasRingNum{
+    width: 200px;
+    height:30px;
+    position: absolute;
+    right:0px;
+    top:30px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#differentWord{
+    width:800px;
+    height:50px;
+    font-size: 36px;
+    line-height: 50px;
+    position: absolute;
+    bottom:50px;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align: center;
+    overflow:hidden;
 }
 #street{
-    width: 1772px;
-    background-color: lightskyblue;
+    width: 1790px;
     position: relative;
     left:0;
     right: 0;
@@ -90,26 +201,41 @@ body {
     margin: auto;
 }
 .panel{
-    width: 1772px;
-    height:300px;
-    margin-bottom: 20px;
-    background-color: lightgreen;
+    width: 1920px;
+    height:335px;
+    margin-bottom: 50px;
 }
 .block{
-    height: 262px;
-    width:450px;
-    margin-left: 10px;
-    margin-right: 10px;
+    height: 327px;
+    width:482px;
+    margin-left: 21.5px;
+    margin-right: 21.5px;
     background-color: white;
     display: inline-block;
-    background-image: url("http://img.sky.fs.skysrt.com/1030/2-yingshi3.jpg");
     padding: 4px;
+    position: relative;
 }
 .panel .block:nth-child(1){
     margin-left: 0;
+    width:710px;
 }
-.coocaabtn.btnFocus{
+.couponDiv{
+    width: 200px;
+    height:30px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    font-size: 28px;
+}
+.coocaabtn.btnFocus:not(.topbtn):not(.banner){
     border: 4px solid white;
+    border-image-source:url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/bannerBorder.png);
+    border-image-slice:8;
+    border-image-width:2;
+    border-image-repeat:round;
+
+
     padding: 0px;
     opacity: 1;
     box-shadow: 0px 0px 0px 0px black;

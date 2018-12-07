@@ -37,9 +37,6 @@ cordova.define("coocaaosapi", function(require, exports, module) {
         startapp.check("com.tianci.user", function(message) { /* success */
             console.log("账户应用版本：" + JSON.stringify(message));
             accountVersion = message.versionCode
-        }, function(message) {});startapp.check("com.tianci.user", function(message) { /* success */
-            console.log("账户应用版本：" + JSON.stringify(message));
-            accountVersion = message.versionCode
         }, function(message) {});
 
         startapp.check("com.coocaa.activecenter", function(message) { /* success */

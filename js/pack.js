@@ -3,17 +3,41 @@ var cAppVersion = 0;
 var activityCenterVersion = 0;
 var mallVersion = 0;
 
+
 var missionlistTencent = [
-    {business:"movie",type:"vip",param:{"source_id":"5"},action:"coocaa.intent.vip.center",countDownTime:30,"subTask":1},
-    {business:"movie",type:"detail",param:{"id":"_otx_of1afaffrf5p4s7"},action:"coocaa.intent.movie.detailinfo",countDownTime:30,"subTask":1},
-    {business:"movie",type:"specialtopic",param:{"id":"10209"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:30,"subTask":1},
-    {business:"ad",type:"video",url:"http://v-play.coocaatv.com/0915/dongwushijie.mp4",countDownTime:30,"subTask":1},
-    {business:"movie",type:"videospecial",param:{"topicCode":"1541"},action:"coocaa.intent.movie.videospecial",countDownTime:30,"subTask":1},
-    {business:"edu",type:"commonlist",param:{"id":"10711"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:30,"subTask":1},
-    {business:"mall",type:"mallHome",param:{},action:"coocaa.intent.action.MALL_HOME",countDownTime:30,"subTask":1},
-    {business:"mall",type:"listzone",param:{"pageId":"177"},action:"coocaa.intent.action.MALL_LIST_ZONE",countDownTime:30,"subTask":1},
-    {business:"mall",type:"malldetail",param:{"id":"17768"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:30,"subTask":1}
+    {business:"mall",type:"specialtopic",param:{"id":"102930"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"mall",type:"malldetail",param:{"id":"17186"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
+    {business:"mall",type:"malldetail",param:{"id":"17933"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
+    {business:"movie",type:"vip",param:{"source_id":"5"},action:"coocaa.intent.vip.center",countDownTime:10,"subTask":0},
+    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
+    {business:"movie",type:"videospecial",param:{"topicCode":"98"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
+    {business:"movie",type:"specialtopic",param:{"id":"103065"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
+    {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"10738"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"102831"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
 ]
+
+var missionlistYinhe = [
+    {business:"mall",type:"specialtopic",param:{"id":"102930"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"mall",type:"malldetail",param:{"id":"17186"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
+    {business:"mall",type:"malldetail",param:{"id":"17933"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
+    {business:"movie",type:"vip",param:{"source_id":"1"},action:"coocaa.intent.vip.center",countDownTime:10,"subTask":0},
+    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:15,"subTask":1},
+    {business:"movie",type:"videospecial",param:{"topicCode":"98"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
+    {business:"movie",type:"specialtopic",param:{"id":"103099"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
+    {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"10738"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"102987"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
+]
+
+
+
+
+
+
+
+
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -259,7 +283,7 @@ function showPage(first,resume) {
     console.log("$$$$$$$$$$$$$$$$$$===="+first+"==========="+resume);
     console.log("---"+macAddress+"------"+TVchip+"-----"+TVmodel+"------"+emmcId+"--------"+activityId + "---------"+access_token+"-------"+cOpenId);
     // 打包接口
-    //     var data = JSON.stringify({"goodsId":"14769","token":access_token,"cudid":activityId+"_"+macAddress});
+    //     var data = JSON.stringify({"goodsId":"14770","token":access_token,"cudid":activityId+"_"+macAddress});
     //     console.log("============="+data);
     //     $.ajax({
     //         type: "get",
@@ -275,16 +299,17 @@ function showPage(first,resume) {
     //             console.log("--------访问失败" + JSON.stringify(error));
     //         }
     //     });
-    selectAd("adStation","CCADTV10017","G0003","1","1","1","","");
+    selectAd("adStation","CCADTV10017","G0003","2","1","1","","");
     //获取广告信息
     function selectAd(boxId,appid,game_id,game_scene,game_panel,game_position,activity_id,task_id){
+        console.log("@@@@@@@@@@@@@@@@@@@@@@@");
         coocaaosapi.getAdData(appid,game_id,game_scene,game_panel,game_position,activity_id,task_id,function (msg) {
             console.log("admsg===="+msg);
             // msg = {"ad_setting":{"client_req_timeout":"800","min_space":"50","monitor_test":"","monitor_type":"0","power_off_ad":"0","sdk_download_type":"9000001","system_time":"","view_req_timeout":"1500"},"client_ip":"202.105.137.34","data_type":"json","db_path":"","general_track_url":"","interval":19395,"next_time":1543501683,"package_md5":"","schedules":[{"adspace_id":"CCADTV10007","app_type_id":-1,"begin_time":1542902400,"bootAd":false,"bootImage":false,"bootVideo":false,"caption":"","click_event":"","click_tracks":[],"content":"http://beta.v2.res.hoisin.coocaatv.com/img/20170711/20170711100935158687.jpg","currHourRes":true,"effect":"","end_time":1574524799,"extend_param":{},"height":1080,"isAssertFile":false,"isLocalScreensaver":false,"media_md5":"2802e2e9649fef32283752fe92425d13","media_size":482603,"media_type":"image","needSyncRes":false,"nextHourRes":true,"onlineAd":true,"order_id":"M20181116002150","player_end_tracks":[],"player_start_tracks":[],"position_x":0,"position_y":0,"relationInfo":{"content":[],"relationInfoContent":[],"type":""},"relation_info":"{\"content\":[],\"type\":\"\"}","resSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/20170711100935158687.jpg","resTempSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/temp/20170711100935158687.jpg","scheduleStatus":"UNKNOWN","schedule_id":"Y20181123013254","schedule_md5":"15f461495a9fc727b7c114c1f51869fe","sdk_track":[],"show_time":4,"subscript":{"show_time":0,"text":"","type":"","vice_text":""},"time_offset":0,"track_url":["https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811231&adspace_id=CCADTV10007","https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811241&adspace_id=CCADTV10007"],"videoPausedAd":false,"videoTimelineAd":false,"webpAnimate":false,"width":1920}],"sys_tracker":"http://tv.cctracker.com/hoisin/","total":1}
             if(JSON.parse(msg).total > 0){
                 console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-                $("#"+boxId).css("background","url("+JSON.parse(msg).schedules[0].content+")");
-                sentInnerAdshow("img",JSON.parse(msg),appid,game_id,game_scene,game_panel,game_position,activity_id,task_id);
+                $("#"+boxId).css("backgroundImage","url("+JSON.parse(msg).schedules[0].content+")");
+                sentInnerAdshow("img",JSON.parse(msg),game_id,game_scene,game_panel,game_position,activity_id,task_id);
                 sentThirdAdshow("img",JSON.parse(msg));
             }else{
                 console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
@@ -324,14 +349,19 @@ function showPage(first,resume) {
     map = new coocaakeymap($(".gotobtn"), null, "btnFocus", function() {}, function(val) {}, function(obj) {});
 
     $("#gotoBuyHome").bind("itemClick",function () {
-        $("#_jrbuyZone").show();
         getAddPack();
     })
+    var _elkOver = false;
     $("#gotoMissionHome").bind("itemClick",function () {
+
+        if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
+        sentLog("christmas_house_page_ button_click",'{"button_name":"麋鹿休息处","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '麋鹿休息处点击', '', '']);
+
         var apkVersion = [];
         var apkArry = ["com.coocaa.activecenter","com.coocaa.app_browser","com.coocaa.mall","com.tianci.movieplatform"];
         var a = '{ "pkgList": ["com.coocaa.activecenter","com.coocaa.app_browser","com.coocaa.mall","com.tianci.movieplatform"] }';
-        var randomMax = 9;//任务数
+        var randomMax = 10;//任务数
         var randomNum = Math.floor(Math.random()*(randomMax));
         console.log("做任务：======="+randomNum);
         // return;
@@ -348,96 +378,128 @@ function showPage(first,resume) {
             if(needQQ){
                 missionlist = missionlistTencent;
             }else{
-                missionlist = missionlistTencent;
+                missionlist = missionlistYinhe;
             }
-            if(activityCenterVersion<102026){
+            if(activityCenterVersion<203000){
                 console.log("活动中心版本过低！！！！");
                 return;
             }else if(missionlist[randomNum].business == "ad"){
-                if(browserVersion < 104021){
+                if(browserVersion < 104022){
                     console.log("浏览器版本过低！！！！");
                     return;
                 }else {
-                    coocaaosapi.startCommonWebview("test_123", missionlist[randomNum].url, "这是一个测试播放地址", "596", "967", "", "视频广告", "赢机会任务弹窗", function(message) {
-                        console.log(message);
-                    }, function(error) {
-                        console.log("commonTask----error")
-                    });
+                    if(_elkOver){
+                        startLowVersionAction(randomNum);
+                    }else{
+                        startNewVersionAction(randomNum);
+                    }
                 }
             }else if(missionlist[randomNum].business == "movie" || missionlist[randomNum].business == "edu"){
-                var pageid =missionlist[randomNum].id;
-                if(cAppVersion < 99999999){
+                if(cAppVersion < 3200106){
                     if(missionlist[randomNum].type == "videospecial"){
                         if(cAppVersion<3300000){
-                            $("#needUpdate").show();
-                            map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
-                            setTimeout(hideToast,3000);
+                            // $("#needUpdate").show();
+                            // map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+                            // setTimeout(hideToast,3000);
+                            startLowVersionAction(1);
                         }else{
-                            startLowVersionAction();
+                            startLowVersionAction(randomNum);
                         }
                     }else if(missionlist[randomNum].type == "specialtopic"){
                         if(cAppVersion<3170001){
-                            $("#needUpdate").show();
-                            map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
-                            setTimeout(hideToast,3000);
+                            // $("#needUpdate").show();
+                            // map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+                            // setTimeout(hideToast,3000);
+                            startLowVersionAction(1);
                         }else{
-                            startLowVersionAction();
+                            startLowVersionAction(randomNum);
                         }
                     }else{
-                        startLowVersionAction();
+                        startLowVersionAction(randomNum);
                     }
-                    function startLowVersionAction(){
-                        var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
-                        var str = "[]";
-                        if(JSON.stringify(missionlist[randomNum].param) != "{}"){
-                            str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
-                        }
-                        coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
-                    }
+
                 }else{
-                    var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
-                    var str = "[]";
-                    if(JSON.stringify(missionlist[randomNum].param) != "{}"){
-                        str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
+                    if(_elkOver){
+                        startLowVersionAction(randomNum);
+                    }else{
+                        startNewVersionAction(randomNum);
                     }
-                    str = JSON.parse(str);
-                    var actionId = "520";
-                    var cOpenId = "123456";
-                    var external = {"id":actionId,"userKeyId":cOpenId,"subTask":missionlist[randomNum].subTask,"countDownTime":missionlist[randomNum].countDownTime}
-                    var doubleEggs_Active = {"doubleEggs_Active":external};
-                    str.push(doubleEggs_Active);
-                    str = JSON.stringify(str);
-                    coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
                 }
             }else if(missionlist[randomNum].business == "mall"){
-                if(mallVersion < 99999999){
+                if(mallVersion < 31000007){
                     console.log("商城版本不支持apk添加=======调用加机会接口");
-                    var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
-                    var str = "[]";
-                    if(JSON.stringify(missionlist[randomNum].param) != "{}"){
-                        str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
-                    }
-                    coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+                    startLowVersionAction(randomNum);
                 }else{
-                    var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
-                    var str = "[]";
-                    if(JSON.stringify(missionlist[randomNum].param) != "{}"){
-                        str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
+                    if(_elkOver){
+                        startLowVersionAction(randomNum);
+                    }else{
+                        startNewVersionAction(randomNum);
                     }
-                    str = JSON.parse(str);
-                    var actionId = "520";
-                    var cOpenId = "123456";
-                    var external = {"id":actionId,"userKeyId":cOpenId,"subTask":missionlist[randomNum].subTask,"countDownTime":missionlist[randomNum].countDownTime}
-                    var doubleEggs_Active = {"doubleEggs_Active":external};
-                    str.push(doubleEggs_Active);
-                    str = JSON.stringify(str);
-                    coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
                 }
             }
-
         }, function(error) {
             console.log("getAppInfo----error" + JSON.stringify(error));
         });
+        function startLowVersionAction(randomNum){
+            if(!_elkOver){
+                console.log("加机会");
+                addChance(missionlist[randomNum].subTask);
+            }else{console.log("不加机会");}
+            var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
+            var str = "[]";
+            if(JSON.stringify(missionlist[randomNum].param) != "{}"){
+                str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
+            }
+            coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+        }
+        function startNewVersionAction(randomNum) {
+            var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
+            var str = "[]";
+            if(JSON.stringify(missionlist[randomNum].param) != "{}"){
+                str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
+            }
+            str = JSON.parse(str);
+            var userKeyId = "123456";
+            var external = {"id":actionId,"userKeyId":userKeyId,"subTask":missionlist[randomNum].subTask,"countDownTime":missionlist[randomNum].countDownTime,"chanceSource":"2","verify_key":new Date().getTime()}
+            var doubleEggs_Active = {"doubleEggs_Active":external};
+            str.push(doubleEggs_Active);
+            str = JSON.stringify(str);
+            coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+        }
+        function addChance(taskType) {
+            var taskName = "跳转任务";
+            if(taskType == "1"){
+                taskName == "视频任务";
+            }
+            var userKeyId = "123456";
+            console.log("id==="+actionId+"======userKeyId===="+userKeyId+"===chanceSource===2====subTask===0====openid===="+cOpenId);
+            $.ajax({
+                type: "post",
+                async: true,
+                url: adressIp+"/light/xmas/add-chance",
+                data: {id:actionId,userKeyId:userKeyId,chanceSource:2,subTask:0,cOpenId:cOpenId},
+                dataType: "json",
+                success: function(data) {
+                    console.log("------------addChance----result-------------"+JSON.stringify(data));
+                    if(data.code == 50100){
+                        if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
+                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务完成","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+                        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"完成", '', '']);
+                    }else{
+                        if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
+                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+                        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
+                    }
+
+                },
+                error: function(error) {
+                    console.log("--------访问失败" + JSON.stringify(error));
+                    if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
+                    sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+                    _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
+                }
+            });
+        }
     })
 
 
@@ -452,7 +514,7 @@ function rankingList(){}
 
 //加载立即检测版本
 function checkVersion() {
-    if(activityCenterVersion<102026){
+    if(activityCenterVersion<1){
         coocaaosapi.createDownloadTask(
             "https://apk-sky-fs.skysrt.com/uploads/20181101/20181101194626718711.apk",
             "9BFEA4B327183FE91C93A59323F39BE2",
@@ -462,7 +524,7 @@ function checkVersion() {
             "http://img.sky.fs.skysrt.com//uploads/20170415/20170415110115834369.png",
             function () {},function () {});
     }
-    if(browserVersion<104021){
+    if(browserVersion<10){
         coocaaosapi.createDownloadTask(
             "https://apk-sky-fs.skysrt.com/uploads/20181101/20181101194626718711.apk",
             "9BFEA4B327183FE91C93A59323F39BE2",
@@ -470,26 +532,20 @@ function checkVersion() {
             "com.coocaa.mall",
             "26040",
             "http://img.sky.fs.skysrt.com//uploads/20170415/20170415110115834369.png",
-            function () {
-
-            },function () {})
+            function () {},function () {})
     }
-    // if(mallVersion<31000005){
-    //     coocaaosapi.createDownloadTask(
-    //         "https://apk-sky-fs.skysrt.com/uploads/20181101/20181101194626718711.apk",
-    //         "9BFEA4B327183FE91C93A59323F39BE2",
-    //         "优选购物",
-    //         "com.coocaa.mall",
-    //         "26040",
-    //         "http://img.sky.fs.skysrt.com//uploads/20170415/20170415110115834369.png",
-    //         function () {
-    //
-    //         },function () {})
-    // }
 }
 
+var goldHouseIsOpen = "1";//1--未开始   2---已开始   3---已结束
+var goldHouseStation = "黄金小屋未开启";
 //获取打包清单
 function getAddPack() {
+    if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
+    sentLog("christmas_house_page_ button_click",'{"button_name":"采购小屋","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+    _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '采购小屋点击', '', '']);
+    $("#_jrbuyZone").show();
+    sentLog("purchase_house_page_show",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","page_type":"'+goldHouseStation+'"}');
+    _czc.push(['_trackEvent', '双旦活动-采购小屋页面', '采购小屋页面曝光'+goldHouseStation, '', '', '']);
     var data = JSON.stringify({"token":access_token,"cudid":activityId+"_"+macAddress});
     console.log("============="+data);
     var haspack = false;
@@ -520,12 +576,12 @@ function getAddPack() {
                         var packDiv = document.createElement("div");
                         packDiv.setAttribute('class', '_jrcoocaabtn _jrgoods _jrgoods'+i);
                         packDiv.setAttribute('goodsId', arrPack[i].goodsId);
-                        packDiv.setAttribute('goodsName', arrPack[i].goodsInfo.goodsName);
+                        packDiv.setAttribute('product_name', arrPack[i].goodsInfo.goodsName);
                         packDiv.setAttribute('goodsThumb', arrPack[i].goodsInfo.goodsThumb);
                         packDiv.setAttribute('promotePrice', arrPack[i].goodsInfo.promotePrice);
                         packDiv.setAttribute('shopPrice', arrPack[i].goodsInfo.shopPrice);
                         packDiv.setAttribute('type', "packnormal");
-                        packDiv.style.backgroundImage = "url("+arrPack[i].goodsInfo.goodsThumb+")";
+                        // packDiv.style.backgroundImage = "url("+arrPack[i].goodsInfo.goodsThumb+")";
                         var goodsName = document.createElement("div");
                         goodsName.setAttribute('class', 'goodsName');
                         goodsName.innerHTML = arrPack[i].goodsInfo.goodsName;
@@ -535,9 +591,14 @@ function getAddPack() {
                         var oldPrice = document.createElement("div");
                         oldPrice.setAttribute('class', 'oldPrice');
                         oldPrice.innerHTML = "原价："+arrPack[i].goodsInfo.promotePrice;
+                        var goodsImg = document.createElement("div");
+                        goodsImg.setAttribute('class', 'goodsImg');
+                        // goodsImg.style.backgroundImage = "url("+arrPack[i].goodsInfo.goodsThumb+")";
+                        goodsImg.style.backgroundImage = "url('http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/img/p'"+arrPack[i].goodsId+".png)";
                         packDiv.appendChild(goodsName);
                         packDiv.appendChild(nowPrice);
                         packDiv.appendChild(oldPrice);
+                        packDiv.appendChild(goodsImg);
                         _jrgoodsbox.appendChild(_jrborder);
                         _jrgoodsbox.appendChild(packDiv);
                         packBox.appendChild(_jrgoodsbox);
@@ -548,6 +609,7 @@ function getAddPack() {
                     _jrborder.setAttribute('class', '_jrborder special');
                     var packDiv = document.createElement("div");
                     packDiv.setAttribute('class', '_jrcoocaabtn _jrgoods _jrpackMore');
+                    packDiv.setAttribute('product_name', '可能喜欢更多');
                     packDiv.setAttribute('type', "packmore");
                     packDiv.style.backgroundImage = "url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/more.png)";
                     _jrgoodsbox.appendChild(_jrborder);
@@ -571,8 +633,8 @@ function getAddPack() {
     });
 }
 
-var couponGoodsId = "14773,14772,14771,14770,14769";
-var couponGoodsIdArr = [14773,14772,14771,14770,14769];
+var couponGoodsId = "13230,17231,18076,18073,18075,18074";
+var couponGoodsIdArr = [13230,17231,18076,18073,18075,18074];
 
 //获取优惠券接口
 function selectGoodsCoupon() {
@@ -595,12 +657,11 @@ function selectGoodsCoupon() {
     });
 }
 
-//设置焦点以及事件
+//设置采购小屋焦点以及事件
 function setFocusInPack(haspack) {
     console.log("***************************************");
     $("._jrgoods").unbind("itemFocus").bind("itemFocus",function(){
         $(this).prev("._jrborder").show();
-
         var changeY = 0;
         var firstnum = $("#_jrpackbox ._jrgoodsbox ._jrcoocaabtn").index($(this));
         var secondnum = $("#_jrrecommendbox ._jrgoodsbox ._jrcoocaabtn").index($(this));
@@ -614,8 +675,8 @@ function setFocusInPack(haspack) {
             }
         }
         $("#_jrbuyZoneInner").css("transform", "translate3D(0, -" + changeY + "px, 0)");
-
     })
+
     $("._jrgoods").unbind("itemBlur").bind("itemBlur",function(){
         $(this).prev("._jrborder").hide();
     })
@@ -628,17 +689,34 @@ function setFocusInPack(haspack) {
         $("#_jrrecommendbox ._jrgoodsbox ._jrcoocaabtn:eq(0)").trigger("itemFocus");
     }
     $("._jrgoods").unbind("itemClick").bind("itemClick",function(){
+        var product = $(this).attr("product_name");
+        var button_name = "你可能喜欢推荐位";
         var _thisType = $(this).attr("type");
         var _thisGoodsId = $(this).attr("goodsId");
         if(_thisType == "packnormal"){
             coocaaosapi.startAppShopDetail(_thisGoodsId,function(){console.log("====")},function(){console.log("error-----")});
         }else if(_thisType == "packmore"){
             console.log("goto PACKList Page====");
+        }
+        else if(_thisType == "moviepkg") {
+            button_name = "超值爆品精选推荐商品推荐位";
+            if (needQQ) {
+                coocaaosapi.startMovieMemberCenter("0", "5", function () {}, function () {})
+            } else {
+                coocaaosapi.startMovieMemberCenter("0", "1", function () {}, function () {})
+            }
+        }else if(_thisType == "edupkg"){
+                button_name = "超值爆品精选推荐商品推荐位";
+                coocaaosapi.startMovieMemberCenter("1", "57", function () {}, function () {})
         }else if(_thisType == "goodsnormal"){
+            button_name = "超值爆品精选推荐商品推荐位";
             coocaaosapi.startAppShopDetail(_thisGoodsId,function(){console.log("====")},function(){console.log("error-----")});
         }else if(_thisType == "goodsmore"){
-
+            button_name = "超值爆品精选推荐商品推荐位";
+            coocaaosapi.startAppShopZone2("188",function(){},function(){})
         }
+        sentLog("purchase_house__wares_click",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","product_name":"'+product+'","button_name":"'+button_name+'"}');
+        _czc.push(['_trackEvent', '双旦活动-采购小屋页面', '采购小屋页面点击', button_name+'+'+product, '', '']);
     })
 }
 

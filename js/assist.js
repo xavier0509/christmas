@@ -12,9 +12,7 @@ function hasLogin(needQQ,fresh,ifFirst) {
             }
             user_flag = 0;
             access_token = "";
-            if(fresh == "ranking"){//=============zy
-                rankingList();
-            } else if(fresh){
+           if(fresh){
                 if(ifFirst){
                     showPage(true,false);
                 }else{
@@ -128,10 +126,7 @@ function hasLogin(needQQ,fresh,ifFirst) {
                             showFlag = access_token
                         }
                     }
-                    if(fresh == "ranking"){//=============zy不移位置获取不到
-                        rankingList();
-                        needInit = true;
-                    } else if(fresh){
+                     if(fresh){
                         if(ifFirst){
                             showPage(true,false);
                         }else{
