@@ -14,7 +14,8 @@ var missionlistTencent = [
     {business:"movie",type:"specialtopic",param:{"id":"103065"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
     {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
     {business:"edu",type:"commonlist",param:{"id":"10738"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
-    {business:"edu",type:"commonlist",param:{"id":"102831"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
+    {business:"edu",type:"commonlist",param:{"id":"102831"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"103177"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
 ]
 
 var missionlistYinhe = [
@@ -22,12 +23,13 @@ var missionlistYinhe = [
     {business:"mall",type:"malldetail",param:{"id":"17186"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"mall",type:"malldetail",param:{"id":"17933"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"movie",type:"vip",param:{"source_id":"1"},action:"coocaa.intent.vip.center",countDownTime:10,"subTask":0},
-    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:15,"subTask":1},
+    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
     {business:"movie",type:"videospecial",param:{"topicCode":"98"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
     {business:"movie",type:"specialtopic",param:{"id":"103099"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
     {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
     {business:"edu",type:"commonlist",param:{"id":"10738"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
-    {business:"edu",type:"commonlist",param:{"id":"102987"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
+    {business:"edu",type:"commonlist",param:{"id":"102987"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0},
+    {business:"edu",type:"commonlist",param:{"id":"103178"},action:"coocaa.intent.action.HOME_COMMON_LIST",countDownTime:10,"subTask":0}
 ]
 
 
@@ -299,12 +301,14 @@ function showPage(first,resume) {
     //             console.log("--------访问失败" + JSON.stringify(error));
     //         }
     //     });
+    var ADMsg = null;
     selectAd("adStation","CCADTV10017","G0003","2","1","1","","");
     //获取广告信息
     function selectAd(boxId,appid,game_id,game_scene,game_panel,game_position,activity_id,task_id){
         console.log("@@@@@@@@@@@@@@@@@@@@@@@");
         coocaaosapi.getAdData(appid,game_id,game_scene,game_panel,game_position,activity_id,task_id,function (msg) {
             console.log("admsg===="+msg);
+            ADMsg = JSON.parse(msg);
             // msg = {"ad_setting":{"client_req_timeout":"800","min_space":"50","monitor_test":"","monitor_type":"0","power_off_ad":"0","sdk_download_type":"9000001","system_time":"","view_req_timeout":"1500"},"client_ip":"202.105.137.34","data_type":"json","db_path":"","general_track_url":"","interval":19395,"next_time":1543501683,"package_md5":"","schedules":[{"adspace_id":"CCADTV10007","app_type_id":-1,"begin_time":1542902400,"bootAd":false,"bootImage":false,"bootVideo":false,"caption":"","click_event":"","click_tracks":[],"content":"http://beta.v2.res.hoisin.coocaatv.com/img/20170711/20170711100935158687.jpg","currHourRes":true,"effect":"","end_time":1574524799,"extend_param":{},"height":1080,"isAssertFile":false,"isLocalScreensaver":false,"media_md5":"2802e2e9649fef32283752fe92425d13","media_size":482603,"media_type":"image","needSyncRes":false,"nextHourRes":true,"onlineAd":true,"order_id":"M20181116002150","player_end_tracks":[],"player_start_tracks":[],"position_x":0,"position_y":0,"relationInfo":{"content":[],"relationInfoContent":[],"type":""},"relation_info":"{\"content\":[],\"type\":\"\"}","resSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/20170711100935158687.jpg","resTempSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/temp/20170711100935158687.jpg","scheduleStatus":"UNKNOWN","schedule_id":"Y20181123013254","schedule_md5":"15f461495a9fc727b7c114c1f51869fe","sdk_track":[],"show_time":4,"subscript":{"show_time":0,"text":"","type":"","vice_text":""},"time_offset":0,"track_url":["https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811231&adspace_id=CCADTV10007","https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811241&adspace_id=CCADTV10007"],"videoPausedAd":false,"videoTimelineAd":false,"webpAnimate":false,"width":1920}],"sys_tracker":"http://tv.cctracker.com/hoisin/","total":1}
             if(JSON.parse(msg).total > 0){
                 console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
@@ -316,6 +320,9 @@ function showPage(first,resume) {
             }
         },function (error) {})
     }
+
+    // sentInnerAdshow("img",ADMsg,"G0003","2","1","1","","");
+    // sentThirdAdshow("img",ADMsg);
     //广告内部提交
     function sentInnerAdshow(type,msg,game_id,game_scene,game_panel,game_position,activity_id,task_id) {
         coocaaosapi.submitAdData(JSON.stringify(msg.schedules[0]),game_id,game_scene,game_panel,game_position,activity_id,task_id,function (msg) {
@@ -355,13 +362,15 @@ function showPage(first,resume) {
     $("#gotoMissionHome").bind("itemClick",function () {
 
         if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
-        sentLog("christmas_house_page_ button_click",'{"button_name":"麋鹿休息处","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
-        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '麋鹿休息处点击', '', '']);
+        var reward_type = "奖励未达上限";
+        if(_elkOver){reward_type = "奖励已达上限";}
+        sentLog("christmas_house_page_ button_click",'{"button_name":"麋鹿休息处","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'","reward_type":"'+reward_type+'"}');
+        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '麋鹿休息处点击'+reward_type, '', '']);
 
         var apkVersion = [];
         var apkArry = ["com.coocaa.activecenter","com.coocaa.app_browser","com.coocaa.mall","com.tianci.movieplatform"];
         var a = '{ "pkgList": ["com.coocaa.activecenter","com.coocaa.app_browser","com.coocaa.mall","com.tianci.movieplatform"] }';
-        var randomMax = 10;//任务数
+        var randomMax = 11;//任务数
         var randomNum = Math.floor(Math.random()*(randomMax));
         console.log("做任务：======="+randomNum);
         // return;
@@ -459,8 +468,7 @@ function showPage(first,resume) {
                 str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
             }
             str = JSON.parse(str);
-            var userKeyId = "123456";
-            var external = {"id":actionId,"userKeyId":userKeyId,"subTask":missionlist[randomNum].subTask,"countDownTime":missionlist[randomNum].countDownTime,"chanceSource":"2","verify_key":new Date().getTime()}
+            var external = {"id":actionId,"userKeyId":userKeyId,"subTask":missionlist[randomNum].subTask,"countDownTime":missionlist[randomNum].countDownTime,"chanceSource":"2","verify_key":new Date().getTime(),"goldHouseIsOpen":goldHouseIsOpen}
             var doubleEggs_Active = {"doubleEggs_Active":external};
             str.push(doubleEggs_Active);
             str = JSON.stringify(str);
@@ -471,7 +479,6 @@ function showPage(first,resume) {
             if(taskType == "1"){
                 taskName == "视频任务";
             }
-            var userKeyId = "123456";
             console.log("id==="+actionId+"======userKeyId===="+userKeyId+"===chanceSource===2====subTask===0====openid===="+cOpenId);
             $.ajax({
                 type: "post",
@@ -483,20 +490,20 @@ function showPage(first,resume) {
                     console.log("------------addChance----result-------------"+JSON.stringify(data));
                     if(data.code == 50100){
                         if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
-                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务完成","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
-                        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"完成", '', '']);
+                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务完成","page_name":"圣诞小屋页面","activity_name":"双旦活动-麋鹿任务页面","page_type":"'+goldHouseStation+'"}');
+                        _czc.push(['_trackEvent', '双旦活动-麋鹿任务页面', '圣诞小屋页面'+goldHouseStation, taskName+"完成", '', '']);
                     }else{
                         if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
-                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
-                        _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
+                        sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动-麋鹿任务页面","page_type":"'+goldHouseStation+'"}');
+                        _czc.push(['_trackEvent', '双旦活动-麋鹿任务页面', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
                     }
 
                 },
                 error: function(error) {
                     console.log("--------访问失败" + JSON.stringify(error));
                     if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
-                    sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
-                    _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
+                    sentLog("task_finished",'{"task_type":"'+taskName+'","task_result":"麋鹿任务失败","page_name":"圣诞小屋页面","activity_name":"双旦活动-麋鹿任务页面","page_type":"'+goldHouseStation+'"}');
+                    _czc.push(['_trackEvent', '双旦活动-麋鹿任务页面', '圣诞小屋页面'+goldHouseStation, taskName+"失败", '', '']);
                 }
             });
         }
@@ -548,6 +555,11 @@ function getAddPack() {
     _czc.push(['_trackEvent', '双旦活动-采购小屋页面', '采购小屋页面曝光'+goldHouseStation, '', '', '']);
     var data = JSON.stringify({"token":access_token,"cudid":activityId+"_"+macAddress});
     console.log("============="+data);
+    if(needQQ){
+        $("#_jrrecommendbox ._jrgoodsbox:nth-child(1) ._jrgoods").css("backgroundImage","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/tencentgoods.jpg)");
+    }else{
+        $("#_jrrecommendbox ._jrgoodsbox:nth-child(1) ._jrgoods").css("backgroundImage","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/yinhegoods.jpg)");
+    }
     var haspack = false;
     $.ajax({
         type: "get",
@@ -594,7 +606,8 @@ function getAddPack() {
                         var goodsImg = document.createElement("div");
                         goodsImg.setAttribute('class', 'goodsImg');
                         // goodsImg.style.backgroundImage = "url("+arrPack[i].goodsInfo.goodsThumb+")";
-                        goodsImg.style.backgroundImage = "url('http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/img/p'"+arrPack[i].goodsId+".png)";
+                        // console.log("************img========="+arrPack[i].goodsInfo.goodsThumb);
+                        goodsImg.style.backgroundImage = "url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/img/p"+arrPack[i].goodsId+".jpg)";
                         packDiv.appendChild(goodsName);
                         packDiv.appendChild(nowPrice);
                         packDiv.appendChild(oldPrice);
@@ -633,8 +646,8 @@ function getAddPack() {
     });
 }
 
-var couponGoodsId = "13230,17231,18076,18073,18075,18074";
-var couponGoodsIdArr = [13230,17231,18076,18073,18075,18074];
+var couponGoodsId = "18129,13230,17231,18076,18073,18075,18074";
+var couponGoodsIdArr = [18129,13230,17231,18076,18073,18075,18074];
 
 //获取优惠券接口
 function selectGoodsCoupon() {
@@ -701,8 +714,10 @@ function setFocusInPack(haspack) {
         else if(_thisType == "moviepkg") {
             button_name = "超值爆品精选推荐商品推荐位";
             if (needQQ) {
+                product = "腾讯影视VIP年卡";
                 coocaaosapi.startMovieMemberCenter("0", "5", function () {}, function () {})
             } else {
+                product = "爱奇艺影视VIP年卡";
                 coocaaosapi.startMovieMemberCenter("0", "1", function () {}, function () {})
             }
         }else if(_thisType == "edupkg"){

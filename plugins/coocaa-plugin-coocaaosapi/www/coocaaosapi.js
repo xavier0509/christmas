@@ -1035,7 +1035,7 @@ cordova.define("coocaaosapi", function(require, exports, module) {
         console.log("启动新版浏览器")
         argscheck.checkArgs('sff', 'CoocaaOSApi.startNewBrowser', arguments);
         startapp.start([
-            ["action", "coocaa.intent.action.browser.no_trans", "com.coocaa.app_browser"],
+            ["action", "coocaa.intent.action.browser", "com.coocaa.app_browser"],
             [{ "url": url }]
         ], success, error);
     }
@@ -1043,7 +1043,23 @@ cordova.define("coocaaosapi", function(require, exports, module) {
         console.log("启动新版浏览器")
         argscheck.checkArgs('sff', 'CoocaaOSApi.startNewBrowser', arguments);
         startapp.start([
+            ["action", "coocaa.intent.action.browser.no_trans", "com.coocaa.app_browser"],
+            [{ "url": url }]
+        ], success, error);
+    }
+    CoocaaOSApi.prototype.startNewBrowser3 = function(url, success, error) {
+        console.log("启动新版浏览器")
+        argscheck.checkArgs('sff', 'CoocaaOSApi.startNewBrowser', arguments);
+        startapp.start([
             ["action", "coocaa.intent.action.browser.no_route", "com.coocaa.app_browser"],
+            [{ "url": url }]
+        ], success, error);
+    }
+    CoocaaOSApi.prototype.startNewBrowser4 = function(url, success, error) {
+        console.log("启动新版浏览器")
+        argscheck.checkArgs('sff', 'CoocaaOSApi.startNewBrowser', arguments);
+        startapp.start([
+            ["action", "coocaa.intent.action.browser.no_trans.no_route", "com.coocaa.app_browser"],
             [{ "url": url }]
         ], success, error);
     }
