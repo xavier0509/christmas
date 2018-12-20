@@ -9,7 +9,7 @@ var missionlistTencent = [
     {business:"mall",type:"malldetail",param:{"id":"17186"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"mall",type:"malldetail",param:{"id":"17933"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"movie",type:"vip",param:{"source_id":"5"},action:"coocaa.intent.vip.center",countDownTime:10,"subTask":0},
-    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
+    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/wushuang.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
     {business:"movie",type:"videospecial",param:{"topicCode":"98"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
     {business:"movie",type:"specialtopic",param:{"id":"103065"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
     {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
@@ -23,7 +23,7 @@ var missionlistYinhe = [
     {business:"mall",type:"malldetail",param:{"id":"17186"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"mall",type:"malldetail",param:{"id":"17933"},action:"coocaa.intent.action.MALL_DETAIL",countDownTime:10,"subTask":0},
     {business:"movie",type:"vip",param:{"source_id":"1"},action:"coocaa.intent.vip.center",countDownTime:10,"subTask":0},
-    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/dongwushijie.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
+    {business:"ad",type:"video",action:"app_browser.intent.action.PLAYER",param:{ "extra.id": "","extra.uri":"http://v-play.coocaatv.com/0915/wushuang.mp4","extra.tips":"看视频得铃铛","extra.height": "","extra.width": "","extra.http_call_url": "","extra.type": "","extra.name": "" },countDownTime:10,"subTask":1},
     {business:"movie",type:"videospecial",param:{"topicCode":"98"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
     {business:"movie",type:"specialtopic",param:{"id":"103099"},action:"coocaa.intent.action.HOME_SPECIAL_TOPIC",countDownTime:10,"subTask":0},
     {business:"movie",type:"videospecial",param:{"pTopicCode":"1183"},action:"coocaa.intent.movie.videospecial",countDownTime:10,"subTask":0},
@@ -364,7 +364,7 @@ function showPage(first,resume) {
         if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
         var reward_type = "奖励未达上限";
         if(_elkOver){reward_type = "奖励已达上限";}
-        sentLog("christmas_house_page_ button_click",'{"button_name":"麋鹿休息处","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'","reward_type":"'+reward_type+'"}');
+        sentLog("christmas_house_page_button_click",'{"button_name":"麋鹿休息处","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'","reward_type":"'+reward_type+'"}');
         _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '麋鹿休息处点击'+reward_type, '', '']);
 
         var apkVersion = [];
@@ -391,10 +391,20 @@ function showPage(first,resume) {
             }
             if(activityCenterVersion<203000){
                 console.log("活动中心版本过低！！！！");
+                $("#needUpdate").show();
+                $("#blackBg").show();
+                $("#needUpdate").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/loading.png)");
+                map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+                toastTimeout = setTimeout(hideToast,3000);
                 return;
             }else if(missionlist[randomNum].business == "ad"){
                 if(browserVersion < 104022){
                     console.log("浏览器版本过低！！！！");
+                    $("#needUpdate").show();
+                    $("#blackBg").show();
+                    $("#needUpdate").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/loading.png)");
+                    map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+                    toastTimeout = setTimeout(hideToast,3000);
                     return;
                 }else {
                     if(_elkOver){
@@ -404,22 +414,16 @@ function showPage(first,resume) {
                     }
                 }
             }else if(missionlist[randomNum].business == "movie" || missionlist[randomNum].business == "edu"){
-                if(cAppVersion < 3200106){
+                if(cAppVersion < 3410022){
                     if(missionlist[randomNum].type == "videospecial"){
                         if(cAppVersion<3300000){
-                            // $("#needUpdate").show();
-                            // map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
-                            // setTimeout(hideToast,3000);
-                            startLowVersionAction(1);
+                            startLowVersionAction(4);
                         }else{
                             startLowVersionAction(randomNum);
                         }
                     }else if(missionlist[randomNum].type == "specialtopic"){
                         if(cAppVersion<3170001){
-                            // $("#needUpdate").show();
-                            // map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
-                            // setTimeout(hideToast,3000);
-                            startLowVersionAction(1);
+                            startLowVersionAction(4);
                         }else{
                             startLowVersionAction(randomNum);
                         }
@@ -435,7 +439,7 @@ function showPage(first,resume) {
                     }
                 }
             }else if(missionlist[randomNum].business == "mall"){
-                if(mallVersion < 31000007){
+                if(mallVersion < 31000020){
                     console.log("商城版本不支持apk添加=======调用加机会接口");
                     startLowVersionAction(randomNum);
                 }else{
@@ -513,6 +517,13 @@ function showPage(first,resume) {
     // getAddPack();
 }
 
+function hideToast() {
+    clearTimeout(toastTimeout);
+    $("#blackBg").hide();
+    $("#needUpdate").hide();
+    map = new coocaakeymap($(".coocaabtn"), $(".block:eq("+remembernum+")"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+}
+
 //排行榜
 function rankingList(){}
 
@@ -521,23 +532,23 @@ function rankingList(){}
 
 //加载立即检测版本
 function checkVersion() {
-    if(activityCenterVersion<1){
+    if(activityCenterVersion<103004){
         coocaaosapi.createDownloadTask(
-            "https://apk-sky-fs.skysrt.com/uploads/20181101/20181101194626718711.apk",
-            "9BFEA4B327183FE91C93A59323F39BE2",
-            "优选购物",
-            "com.coocaa.mall",
-            "26040",
+            "https://apk-sky-fs.skysrt.com/uploads/20181209/20181209111030764234.apk",
+            "5501D27CF6D0B187C49C6FBD217D59AA",
+            "活动中心",
+            "com.coocaa.activecenter",
+            "26417",
             "http://img.sky.fs.skysrt.com//uploads/20170415/20170415110115834369.png",
             function () {},function () {});
     }
-    if(browserVersion<10){
+    if(browserVersion<104031){
         coocaaosapi.createDownloadTask(
-            "https://apk-sky-fs.skysrt.com/uploads/20181101/20181101194626718711.apk",
-            "9BFEA4B327183FE91C93A59323F39BE2",
-            "优选购物",
-            "com.coocaa.mall",
-            "26040",
+            "https://apk-sky-fs.skysrt.com/uploads/20181213/20181213190209511926.apk",
+            "270A47719CDBAB47EDBC5B1BD8808266",
+            "活动浏览器",
+            "com.coocaa.app_browser",
+            "26423",
             "http://img.sky.fs.skysrt.com//uploads/20170415/20170415110115834369.png",
             function () {},function () {})
     }
@@ -548,7 +559,7 @@ var goldHouseStation = "黄金小屋未开启";
 //获取打包清单
 function getAddPack() {
     if(goldHouseIsOpen == "1"){goldHouseStation = "黄金小屋未开启";}else if(goldHouseIsOpen == "2"){goldHouseStation = "黄金小屋已开启";}else{goldHouseStation = "黄金小屋已关闭";}
-    sentLog("christmas_house_page_ button_click",'{"button_name":"采购小屋","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
+    sentLog("christmas_house_page_button_click",'{"button_name":"采购小屋","page_name":"圣诞小屋页面","activity_name":"双旦活动--圣诞小屋","page_type":"'+goldHouseStation+'"}');
     _czc.push(['_trackEvent', '双旦活动--圣诞小屋', '圣诞小屋页面'+goldHouseStation, '采购小屋点击', '', '']);
     $("#_jrbuyZone").show();
     sentLog("purchase_house_page_show",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","page_type":"'+goldHouseStation+'"}');
@@ -730,7 +741,7 @@ function setFocusInPack(haspack) {
             button_name = "超值爆品精选推荐商品推荐位";
             coocaaosapi.startAppShopZone2("188",function(){},function(){})
         }
-        sentLog("purchase_house__wares_click",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","product_name":"'+product+'","button_name":"'+button_name+'"}');
+        sentLog("purchase_house_wares_click",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","product_name":"'+product+'","button_name":"'+button_name+'"}');
         _czc.push(['_trackEvent', '双旦活动-采购小屋页面', '采购小屋页面点击', button_name+'+'+product, '', '']);
     })
 }

@@ -14,12 +14,14 @@ var app = {
         if(needFresh){
             needFresh = false;
             showPage(false,true)
-        }else if(needSentADLog){
+        }else{
             needSentADLog = false;
             sentLog("shopping_mall_page_show",'{"page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
             _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '福利街曝光', '', '']);
-            sentInnerAdshow("img",ADMsg,"G0003","1","1","1","","");
-            sentThirdAdshow("img",ADMsg);
+            if(ADMsg!=null&&ADMsg.schedules!=undefined&&ADMsg.schedules[0]!=undefined){
+                sentInnerAdshow("img",ADMsg,"G0003","1","1","1","","");
+                sentThirdAdshow("img",ADMsg);
+            }
         }
     },
     handlepause: function() {
@@ -35,8 +37,10 @@ var app = {
             map = new coocaakeymap($(".coocaabtn"),$("#rule"), "btnFocus", function() {}, function(val) {}, function(obj) {});
             sentLog("shopping_mall_page_show",'{"page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
             _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '福利街曝光', '', '']);
-            // sentInnerAdshow("img",ADMsg,"G0003","1","1","1","","");
-            // sentThirdAdshow("img",ADMsg);
+            if(ADMsg!=null&&ADMsg.schedules!=undefined&&ADMsg.schedules[0]!=undefined){
+                sentInnerAdshow("img",ADMsg,"G0003","1","1","1","","");
+                sentThirdAdshow("img",ADMsg);
+            }
         }else if($("#needUpdate").css("display") == "block"){
             hideToast();
         }else{
@@ -81,6 +85,9 @@ var app = {
                     }
                 });
             }
+            coocaaosapi.getIpInfo(function (msg) {
+                userIp = msg.ip;
+            },function(){})
             console.log("deviceinfo=============="+JSON.stringify(deviceInfo))
             macAddress = message.mac;
             TVmodel = message.model;
@@ -200,7 +207,7 @@ function initMap(setFocus) {
 }
 function initBtn() {
     $("#rule").unbind("itemClick").bind("itemClick",function () {
-        sentLog("shopping_mall_page_ button_click",'{"button_name":"活动规则","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
+        sentLog("shopping_mall_page_button_click",'{"button_name":"活动规则","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '活动规则点击', '', '']);
         $("#mainbox").hide();
         $("#rulePage").show();
@@ -210,7 +217,7 @@ function initBtn() {
     })
 
     $("#mygift").unbind("itemClick").bind("itemClick",function () {
-        sentLog("shopping_mall_page_ button_click",'{"button_name":"我的礼物","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
+        sentLog("shopping_mall_page_button_click",'{"button_name":"我的礼物","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '我的礼物点击', '', '']);
         sentLog("main_reward_page_show",'{"page_name":"我的礼物","activity_name":"双旦活动-我的礼物页面","last_page_name":"福利街"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '我的礼物曝光', '', '', '']);
@@ -218,19 +225,34 @@ function initBtn() {
     })
 
     $("#packlist").unbind("itemClick").bind("itemClick",function () {
-        sentLog("shopping_mall_page_ button_click",'{"button_name":"打包清单","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
+        sentLog("shopping_mall_page_button_click",'{"button_name":"打包清单","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '打包清单点击', '', '']);
+        sentLog("pack_list_page_show",'{"page_name":"打包清单页面","activity_name":"双旦活动-打包任务页面","last_page_name":"福利街","page_type":"'+page_type+'"}');
+        _czc.push(['_trackEvent', '双旦活动-福利街', '打包清单页面曝光', '', '', '']);
         coocaaosapi.startNewBrowser4(homeurl+"?pagename=pack",function(){needSentADLog=true;},function(){});
 
     })
 
     $("#topBanner").unbind("itemClick").bind("itemClick",function () {
-        sentLog("shopping_mall_page_ button_click",'{"button_name":"'+bannerBtnName+'","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
+        sentLog("shopping_mall_page_button_click",'{"button_name":"'+bannerBtnName+'","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '打包清单点击', '', '']);
         coocaaosapi.startNewBrowser4(homeurl+"?pagename=gold",function(){needFresh=true;},function(){});
 
     })
-
+    $("#topBanner").unbind("itemFocus").bind("itemFocus",function () {
+        if(bannerBtnName == "马上领取"){
+            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/getNow.png)");
+        }else{
+            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/enterNow.png)");
+        }
+    })
+    $("#topBanner").unbind("itemBlur").bind("itemBlur",function () {
+        if(bannerBtnName == "马上领取"){
+            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusgetNow.png)");
+        }else{
+            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusenterNow.png)");
+        }
+    })
     $(".block").unbind("itemClick").bind("itemClick",function(){
         var block_name = $(this).attr("block_name");
         var block_bussiness_type = $(this).attr("business");
@@ -242,7 +264,7 @@ function initBtn() {
         }else if((blockNum+1)%3==2){
             block_order = "入口二";
         }
-        sentLog("shopping_mall_page_ button_click",'{"button_name":"各业务入口","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'","block_name":"'+block_name+'","block_order":"'+block_order+'","block_bussiness_type":"'+block_bussiness_type+'"}');
+        sentLog("shopping_mall_page_button_click",'{"button_name":"各业务入口","page_name":"福利街页面","activity_name":"双旦活动-福利街","page_type":"'+page_type+'","topblock_type":"'+topblock_type+'","link_type":"'+link_type+'","block_name":"'+block_name+'","block_order":"'+block_order+'","block_bussiness_type":"'+block_bussiness_type+'"}');
         _czc.push(['_trackEvent', '双旦活动-福利街', '福利街页面', '打包清单点击', '', '']);
         var startAction = $(this).attr("action");
         var pkgname = JSON.parse(startAction).packagename;
@@ -329,14 +351,22 @@ function initBtn() {
 }
 
 function showAwardlist(box,inner,name) {
-    clearInterval(marqueeInterval);
+    if(name == "1"){
+        clearInterval(marqueeInterval1);
+    }else{
+        clearInterval(marqueeInterval2);
+    }
     var boxHeight = $(box).height();
     var listHeight = $(inner).height();
     var screenNum = Math.ceil(listHeight/boxHeight);
     console.log("---"+boxHeight+"---"+listHeight+"----"+screenNum+"---")
     var a=1;
     if(screenNum>1){
-        marqueeInterval = setInterval(marquee,3000);
+        if(name == "1"){
+            marqueeInterval1 = setInterval(marquee,3000);
+        }else{
+            marqueeInterval2 = setInterval(marquee,3000);
+        }
     }
     function marquee() {
         $(inner).css("transform", "translate3D(0, -" + a * boxHeight + "px, 0)");
@@ -368,13 +398,17 @@ function showPage(first,resume) {
             showOperation();
             showAwardInfo();
             selectAd("adStation","CCADTV10017","G0003","1","1","1","","");
-            $("#hasRingNum span").html(data.data.chanceResult.remainingNumber);
+            var remainNum = 0;
+            if(data.data.chanceResult != undefined){
+                var remainNum = data.data.chanceResult.remainingNumber||"0";
+            }
+            $("#hasRingNum span").html(remainNum);
             if(data.code == "50100"){
                 var firstIn = data.data.chanceResult.firstIn;
                 if(firstIn == "0" || firstIn == "2"){
                     // $("#differentWord").html("您有一个圣诞见面礼待领取");
                     $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/firstin.png)");
-                    $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/getNow.png)");
+                    $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusgetNow.png)");
                     awardToast = true;
                     topblock_type = "活动期间第一次进入";
                     bannerBtnName = "马上领取";
@@ -383,21 +417,21 @@ function showPage(first,resume) {
                     if(chanceSource.length>1){
                         // $("#differentWord").html("您有奖励待领取");
                         $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/someawards.png)");
-                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/getNow.png)");
+                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusgetNow.png)");
                         awardToast = true;
                         topblock_type = "完成多个任务进入";
                         bannerBtnName = "马上领取";
                     }else if(chanceSource[0] == "1"){
                         // $("#differentWord").html("您有一个返利红包待领取");
                         $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/redpack.png)");
-                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/getNow.png)");
+                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusgetNow.png)");
                         awardToast = true;
                         topblock_type = "完成付费任务后首次进入";
                         bannerBtnName = "马上领取";
                     }else if(chanceSource[0] == "2"){
                         // $("#differentWord").html("您有一个奖励待领取");
                         $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/award.png)");
-                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/getNow.png)");
+                        $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusgetNow.png)");
                         awardToast = true;
                         topblock_type = "完成麋鹿任务首次进入";
                         bannerBtnName = "马上领取";
@@ -405,13 +439,13 @@ function showPage(first,resume) {
                         if(new Date(data.data.sysTime) > new Date(data.data.goldActiveBeginTime)){
                             // $("#differentWord").html("进入召唤超级锦鲤");
                             $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/open.png)");
-                            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/enterNow.png)");
+                            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusenterNow.png)");
                             topblock_type = "黄金屋开启后";
                             bannerBtnName = "马上进入";
                         }else{
                             // $("#differentWord").html("集铃铛成为超级锦鲤");
                             $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/close.png)");
-                            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/enterNow.png)");
+                            $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusenterNow.png)");
                             topblock_type = "黄金小屋未开启的普通状态（无待领取奖励）";
                             bannerBtnName = "马上进入";
                         }
@@ -428,9 +462,10 @@ function showPage(first,resume) {
                 }
             }else{
                 // $("#differentWord").html("快来领走您的双旦礼物吧");
+                console.log("*********end---------------");
                 actEnd = true;
                 $("#innerBanner").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finish.png)");
-                $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/enterNow.png)");
+                $("#bannerBtn").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/nofocusenterNow.png)");
                 topblock_type = "活动已结束";
                 page_type = "黄金小屋已关闭";
                 bannerBtnName = "马上进入";
@@ -447,14 +482,14 @@ function showOperation() {
     var couponStation = {};
     var businessOrder = ["影视","购物","教育","应用"];
     var tag_id="";
-    if(needQQ){tag_id = 103188}else {tag_id = 103187}
-    // tag_id = 103100;
+    // if(needQQ){tag_id = 103188}else {tag_id = 103187}
+    if(needQQ){tag_id = 103228}else {tag_id = 103229}
     $("#street").html("");
     $.ajax({
         type: "get",
         async: true,
-        url: "http://172.20.155.91:8080/tvos/getWebPageContent",
-        data: {tag_id:tag_id},
+        url: operationurl,
+        data: {page:1,page_size:6,tag_id:tag_id},
         dataType: "json",
         timeout: 3000,
         success: function(data) {
@@ -591,10 +626,18 @@ function showAwardInfo() {
                     var box = document.getElementById("koiNewsul");
                     for(var i=0;i<data.data.koiNews.result.length;i++){
                         var list = document.createElement("li");
-                        list.innerHTML="恭喜"+data.data.koiNews[i].result.province+data.data.koiNews[i].result.city+" 用户"+data.data.koiNews[i].result.nickName+" 成为"+data.data.koiNews[i].result.queue+"号锦鲤";
+                        if(data.data.koiNews.result[i].nickName == ""){
+                            userIp = userIp.substr(0,7)+"...";
+                            list.innerHTML="恭喜"+data.data.koiNews.result[i].province+" ip地址："+userIp+" 成为"+data.data.koiNews.result[i].queue+"号锦鲤";
+                        }else{
+                            var province = (data.data.koiNews.result[i].province==null)?"":data.data.koiNews.result[i].province;
+                            province = province.replace(/省|市|自治区|特别行政区|壮族|回族|维吾尔/g,"");
+                            var username = data.data.koiNews.result[i].nickName.length>7?data.data.koiNews.result[i].nickName.substr(0,7)+"...":data.data.koiNews.result[i].nickName;
+                            list.innerHTML="恭喜"+province+"用户"+username+"成为"+data.data.koiNews.result[i].queue+"号锦鲤";
+                        }
                         box.appendChild(list);
                     }
-                    showAwardlist("#koiNews","#koiNewsul");
+                    showAwardlist("#koiNews","#koiNewsul","1");
                 }else{
                     $("#koiNewsul").html("超级锦鲤仍未出现，就等你来了！");
                 }
@@ -647,7 +690,7 @@ function showAwardInfo() {
                 list.innerHTML=data.data.fakeNews[i].nickName+" 带麋鹿散步 获得"+data.data.fakeNews[i].awardName;
                 box.appendChild(list);
             }
-            showAwardlist("#fakeNews","#fakeNewsul");
+            showAwardlist("#fakeNews","#fakeNewsul","2");
         },
         error: function(error) {
             console.log("-----------访问失败---------"+JSON.stringify(error));

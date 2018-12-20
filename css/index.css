@@ -121,15 +121,15 @@ body {
     background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/right.png");
 }
 #topBanner{
-    width: 1822px;
-    height: 564px;
+    width: 1857px;
+    height: 580px;
     position: relative;
-    left:49px;
+    left:30px;
     top: 53px;
-    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/banner.png");
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/newbanner.png");
 }
 #topBanner.btnFocus{
-    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/borderbanner.png");
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/newborderbanner.png");
 }
 #innerBanner,#adStation{
     width:1760px;

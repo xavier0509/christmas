@@ -209,7 +209,7 @@ body {
 .special._jrgoods{
     background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/more.png");
 }
-#_jrrecommendbox ._jrgoodsbox:nth-child(2) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/edugoods.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(2) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/newedugoods.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(3) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods1.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(4) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods2.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(5) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods3.jpg");}
@@ -286,3 +286,28 @@ body {
     /*z-index: 2;*/
 /*}*/
 
+#blackBg {
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+    -moz-opacity: 0.8;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    z-index: 3;
+}
+#needUpdate{
+    width: 1134px;
+    height:308px;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+    display: none;
+    z-index: 5;
+}

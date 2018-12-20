@@ -23,6 +23,7 @@ var showprogress = 0;
 var waitApkInstallFunc = "";
 var downToast = "";
 var downGameFalse = false;
+var startActionReplace = "coocaa.intent.action.HOME";
 
 var actionStatus = "start";
 var gameStatus = "";
@@ -36,13 +37,14 @@ var buyActiveId = "91";
 // var orderUrl = "https://api-business.skysrt.com/v3/order/genOrderByJsonp.html?data=";
 // var actionId = "80";
 
-var startActionReplace = "coocaa.intent.action.HOME";
-
 var awardurl = "http://beta.webapp.skysrt.com/yuanbo/test/XmasNewYear2018/myaward.html?from=street";
 var homeurl = "http://beta.webapp.skysrt.com/lxw/sd/index.html";
 
 // var awardurl = "https://webapp.skysrt.com/games/double11/example/index.html?part=award";
 // var homeurl = "https://webapp.skysrt.com/games/double11/address/help.html";
+
+// var operationurl="http://172.20.155.91:8080/tvos/getWebPageContent";
+var operationurl="http://api.home.skysrt.com/v1/tvos/getWebPageContent";
 
 var showMove = false;//是否展示动效
 
@@ -63,12 +65,14 @@ var needSentADLog = false;
 var needFresh = false;
 var actEnd = false;
 var awardToast = false;
-var marqueeInterval = null;
+var marqueeInterval1 = null;
+var marqueeInterval2 = null;
 var intervalForCutdown = null;
 var rememberBtn = null;
 var needRememberFocus = false;
 var remembernum = "0";
 var toastTimeout = null;
+var userIp = "";
 
 
 
