@@ -28,20 +28,22 @@ var startActionReplace = "coocaa.intent.action.HOME";
 var actionStatus = "start";
 var gameStatus = "";
 
-var adressIp = "http://beta.restful.lottery.coocaatv.com";
-var orderUrl = "http://172.20.132.182:8090/v3/order/genOrderByJsonp.html?data=";
-var actionId = "89";
-var goldActionId = "90";
-var buyActiveId = "91";
-// var adressIp = "https://restful.skysrt.com";
-// var orderUrl = "https://api-business.skysrt.com/v3/order/genOrderByJsonp.html?data=";
-// var actionId = "80";
+// var adressIp = "http://beta.restful.lottery.coocaatv.com";
+// var orderUrl = "http://172.20.132.182:8090/v3/order/genOrderByJsonp.html?data=";
+// var actionId = "89";
+// var goldActionId = "90";
+// var buyActiveId = "91";
+var adressIp = "https://restful.skysrt.com";
+var orderUrl = "https://api-business.skysrt.com/v3/order/genOrderByJsonp.html?data=";
+var actionId = "97";
+var goldActionId = "99";
+var buyActiveId = "98";
 
-var awardurl = "http://beta.webapp.skysrt.com/yuanbo/test/XmasNewYear2018/myaward.html?from=street";
-var homeurl = "http://beta.webapp.skysrt.com/lxw/sd/index.html";
+// var awardurl = "http://beta.webapp.skysrt.com/yuanbo/test/XmasNewYear2018/myaward.html?from=street";
+// var homeurl = "http://beta.webapp.skysrt.com/lxw/sd/index.html";
 
-// var awardurl = "https://webapp.skysrt.com/games/double11/example/index.html?part=award";
-// var homeurl = "https://webapp.skysrt.com/games/double11/address/help.html";
+var awardurl = "https://webapp.skysrt.com/christmas18/myaward/index.html?from=street";
+var homeurl = "https://webapp.skysrt.com/christmas18/main/index.html";
 
 // var operationurl="http://172.20.155.91:8080/tvos/getWebPageContent";
 var operationurl="http://api.home.skysrt.com/v1/tvos/getWebPageContent";
@@ -72,6 +74,8 @@ var rememberBtn = null;
 var needRememberFocus = false;
 var remembernum = "0";
 var toastTimeout = null;
+var toastTimeout2 = null;
+var toastTimeout3 = null;
 var userIp = "";
 
 

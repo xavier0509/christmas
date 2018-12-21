@@ -142,6 +142,7 @@ body {
     margin: auto;
 }
 #adStation{
+    background-size: 100%;
     /*background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/ad.png");*/
 }
 #newsBg{
@@ -255,18 +256,30 @@ body {
     margin-bottom: 50px;
 }
 .block{
-    height: 327px;
-    width:482px;
-    margin-left: 21.5px;
-    margin-right: 21.5px;
-    background-color: white;
+    height: 351px;
+    width:506px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*background-color: white;*/
     display: inline-block;
     padding: 4px;
     position: relative;
+    background-size: 100%;
+}
+.blockimg{
+    height: 327px;
+    width:482px;
+    margin: 4px;
+    background-size: 100%;
+    position: relative;
 }
 .panel .block:nth-child(1){
-    margin-left: 0;
-    width:710px;
+    margin-left: -10px;
+    width:726px;
+}
+.panel .block:nth-child(1) .blockimg{
+    margin-left: 16px;
+    width:702px;
 }
 .panel .block:nth-child(1) .couponDiv{
     background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/couponbg.png");
@@ -291,11 +304,13 @@ body {
     border-image-width:2;
     border-image-repeat:round;
 
+    background-size: 100%;
 
     padding: 0px;
     opacity: 1;
     /*box-shadow: 0px 0px 0px 0px black;*/
-    box-shadow:0px 10px 25px rgba(0,0,0,0.5);
+    /*box-shadow:0px 10px 25px rgba(0,0,0,0.5);*/
+    box-shadow:0px 0px 45px rgba(0,0,0,0.8);
     transform: scale(1.08, 1.08);
     -ms-transform: scale(1.08, 1.08);
     /* IE 9 */
@@ -306,7 +321,12 @@ body {
     -moz-transform: scale(1.08, 1.08);
     z-index: 2;
 }
-
+.coocaabtn .blockimg{
+    margin: 12px;
+}
+.coocaabtn.block:nth-child(1) .blockimg{
+    margin-left: 12px;
+}
 #blackBg {
     display:none;
     position: fixed;

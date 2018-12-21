@@ -389,7 +389,7 @@ function showPage(first,resume) {
             }else{
                 missionlist = missionlistYinhe;
             }
-            if(activityCenterVersion<203000){
+            if(activityCenterVersion<103004){
                 console.log("活动中心版本过低！！！！");
                 $("#needUpdate").show();
                 $("#blackBg").show();
@@ -398,7 +398,7 @@ function showPage(first,resume) {
                 toastTimeout = setTimeout(hideToast,3000);
                 return;
             }else if(missionlist[randomNum].business == "ad"){
-                if(browserVersion < 104022){
+                if(browserVersion < 104031){
                     console.log("浏览器版本过低！！！！");
                     $("#needUpdate").show();
                     $("#blackBg").show();
@@ -463,7 +463,17 @@ function showPage(first,resume) {
             if(JSON.stringify(missionlist[randomNum].param) != "{}"){
                 str = '['+JSON.stringify(missionlist[randomNum].param).replace(/,/g,"},{")+']'
             }
-            coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+
+            $("#needUpdate").show();
+            $("#blackBg").show();
+            $("#needUpdate").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/loading.png)");
+            map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+            toastTimeout = setTimeout(hideToast,3000);
+            toastTimeout2 = setTimeout(startLowAction,3100);
+            function startLowAction(){
+                coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+            }
+
         }
         function startNewVersionAction(randomNum) {
             var param1="action",param2=missionlist[randomNum].action,param3="",param4="",param5="";
@@ -476,7 +486,15 @@ function showPage(first,resume) {
             var doubleEggs_Active = {"doubleEggs_Active":external};
             str.push(doubleEggs_Active);
             str = JSON.stringify(str);
-            coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+            $("#needUpdate").show();
+            $("#blackBg").show();
+            $("#needUpdate").css("background","url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/loading.png)");
+            map = new coocaakeymap($("#needUpdate"), $("#needUpdate"), "btnFocus", function() {}, function(val) {}, function(obj) {});
+            toastTimeout = setTimeout(hideToast,3000);
+            toastTimeout2 = setTimeout(startLowAction2,3100);
+            function startLowAction2(){
+                coocaaosapi.startCommonNormalAction(param1,param2,param3,param4,param5,str,function(){},function(){});
+            }
         }
         function addChance(taskType) {
             var taskName = "跳转任务";
@@ -683,6 +701,7 @@ function selectGoodsCoupon() {
 
 //设置采购小屋焦点以及事件
 function setFocusInPack(haspack) {
+    $("._jrborder").hide();
     console.log("***************************************");
     $("._jrgoods").unbind("itemFocus").bind("itemFocus",function(){
         $(this).prev("._jrborder").show();
@@ -739,7 +758,7 @@ function setFocusInPack(haspack) {
             coocaaosapi.startAppShopDetail(_thisGoodsId,function(){console.log("====")},function(){console.log("error-----")});
         }else if(_thisType == "goodsmore"){
             button_name = "超值爆品精选推荐商品推荐位";
-            coocaaosapi.startAppShopZone2("188",function(){},function(){})
+            coocaaosapi.startAppShopZone2("193",function(){},function(){})
         }
         sentLog("purchase_house_wares_click",'{"page_name":"采购小屋页面","activity_name":"双旦活动-采购小屋页面","product_name":"'+product+'","button_name":"'+button_name+'"}');
         _czc.push(['_trackEvent', '双旦活动-采购小屋页面', '采购小屋页面点击', button_name+'+'+product, '', '']);

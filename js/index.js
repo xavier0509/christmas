@@ -550,16 +550,20 @@ function showOperation() {
                 pannelDiv.setAttribute('id', 'panel'+(i+1));
                 for(var j=0;j<3;j++){
                     var blockDiv = document.createElement("div");
+                    var blockDivImg = document.createElement("div");
                     blockDiv.setAttribute('class', 'block coocaabtn');
+                    blockDivImg.setAttribute('class', 'blockimg');
                     // console.log(i+"====="+operationArr[i]);
                     blockDiv.setAttribute('action', operationArr[i].contents[j].extra.block_content_info.action);
                     blockDiv.setAttribute('business', businessOrder[i]);
                     blockDiv.setAttribute('block_name', operationArr[i].contents[j].extra.block_content_info.title);
-                    blockDiv.style.backgroundImage = "url("+operationArr[i].contents[j].extra.block_content_info.imgs.poster.images[0]+")";
+                    // blockDiv.style.backgroundImage = "url("+operationArr[i].contents[j].extra.block_content_info.imgs.poster.images[0]+")";
+                    blockDivImg.style.backgroundImage = "url("+operationArr[i].contents[j].extra.block_content_info.imgs.poster.images[0]+")";
                     var couponDiv = document.createElement("div");
                     couponDiv.setAttribute('class', 'couponDiv');
                     couponDiv.innerHTML="&nbsp";
-                    blockDiv.appendChild(couponDiv);
+                    blockDivImg.appendChild(couponDiv);
+                    blockDiv.appendChild(blockDivImg);
                     pannelDiv.appendChild(blockDiv);
                 }
                 street.appendChild(pannelDiv);
@@ -687,7 +691,7 @@ function showAwardInfo() {
             var box = document.getElementById("fakeNewsul");
             for(var i=0;i<data.data.fakeNews.length;i++){
                 var list = document.createElement("li");
-                list.innerHTML=data.data.fakeNews[i].nickName+" 带麋鹿散步 获得"+data.data.fakeNews[i].awardName;
+                list.innerHTML=data.data.fakeNews[i].nickName+data.data.fakeNews[i].awardName;
                 box.appendChild(list);
             }
             showAwardlist("#fakeNews","#fakeNewsul","2");
@@ -704,7 +708,6 @@ function selectAd(boxId,appid,game_id,game_scene,game_panel,game_position,activi
     coocaaosapi.getAdData(appid,game_id,game_scene,game_panel,game_position,activity_id,task_id,function (msg) {
         console.log("admsg===="+msg);
         ADMsg = JSON.parse(msg);
-        // msg = {"ad_setting":{"client_req_timeout":"800","min_space":"50","monitor_test":"","monitor_type":"0","power_off_ad":"0","sdk_download_type":"9000001","system_time":"","view_req_timeout":"1500"},"client_ip":"202.105.137.34","data_type":"json","db_path":"","general_track_url":"","interval":19395,"next_time":1543501683,"package_md5":"","schedules":[{"adspace_id":"CCADTV10007","app_type_id":-1,"begin_time":1542902400,"bootAd":false,"bootImage":false,"bootVideo":false,"caption":"","click_event":"","click_tracks":[],"content":"http://beta.v2.res.hoisin.coocaatv.com/img/20170711/20170711100935158687.jpg","currHourRes":true,"effect":"","end_time":1574524799,"extend_param":{},"height":1080,"isAssertFile":false,"isLocalScreensaver":false,"media_md5":"2802e2e9649fef32283752fe92425d13","media_size":482603,"media_type":"image","needSyncRes":false,"nextHourRes":true,"onlineAd":true,"order_id":"M20181116002150","player_end_tracks":[],"player_start_tracks":[],"position_x":0,"position_y":0,"relationInfo":{"content":[],"relationInfoContent":[],"type":""},"relation_info":"{\"content\":[],\"type\":\"\"}","resSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/20170711100935158687.jpg","resTempSavePath":"/data/user/0/com.coocaa.app_browser/files/cc_ad_sdk/temp/20170711100935158687.jpg","scheduleStatus":"UNKNOWN","schedule_id":"Y20181123013254","schedule_md5":"15f461495a9fc727b7c114c1f51869fe","sdk_track":[],"show_time":4,"subscript":{"show_time":0,"text":"","type":"","vice_text":""},"time_offset":0,"track_url":["https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811231&adspace_id=CCADTV10007","https://data-hoisin.coocaa.com/track?mac=e2f62df9351f2df2488efe573547bdb5&model=Q4A&sid=201811241&adspace_id=CCADTV10007"],"videoPausedAd":false,"videoTimelineAd":false,"webpAnimate":false,"width":1920}],"sys_tracker":"http://tv.cctracker.com/hoisin/","total":1}
         if(JSON.parse(msg).total > 0){
             console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
             $("#"+boxId).css("backgroundImage","url("+JSON.parse(msg).schedules[0].content+")");
