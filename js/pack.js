@@ -636,7 +636,7 @@ function getAddPack() {
                         goodsImg.setAttribute('class', 'goodsImg');
                         // goodsImg.style.backgroundImage = "url("+arrPack[i].goodsInfo.goodsThumb+")";
                         // console.log("************img========="+arrPack[i].goodsInfo.goodsThumb);
-                        goodsImg.style.backgroundImage = "url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/img/p"+arrPack[i].goodsId+".jpg)";
+                        goodsImg.style.backgroundImage = "url(http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/img/new/pp"+arrPack[i].goodsId+".jpg)";
                         packDiv.appendChild(goodsName);
                         packDiv.appendChild(nowPrice);
                         packDiv.appendChild(oldPrice);

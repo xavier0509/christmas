@@ -11,6 +11,7 @@ var app = {
         document.addEventListener("pause", this.handlepause, false);
     },
     handleresume: function() {
+        console.log("************************");
         if(needFresh){
             needFresh = false;
             showPage(false,true)
@@ -656,19 +657,19 @@ function showAwardInfo() {
                         var cutdown =beginTime - nowTime;
                         var transTime = Math.ceil(cutdown / 1000 / 60 / 60 / 24);
                         if (transTime > 1) {
-                            $("#koiNewsul").html("距离超级锦鲤诞生 还剩："+transTime+"天");
+                            $("#koiNewsul").html("距离黄金小屋开启还剩"+transTime+"天");
                         } else if (transTime == 1) {
                             var transTime = Math.ceil(cutdown / 1000 / 60 / 60);
                             if (transTime > 1) {
-                                $("#koiNewsul").html("距离超级锦鲤诞生 还剩："+transTime+"小时");
+                                $("#koiNewsul").html("距离黄金小屋开启还剩"+transTime+"小时");
                             } else if (transTime == 1) {
                                 var transTime = Math.ceil(cutdown / 1000 / 60);
                                 if (transTime > 1) {
-                                    $("#koiNewsul").html("距离超级锦鲤诞生 还剩："+transTime+"分钟");
+                                    $("#koiNewsul").html("距离黄金小屋开启还剩"+transTime+"分钟");
                                 } else if (transTime == 1) {
                                     var transTime = Math.ceil(cutdown / 1000 );
                                     if (transTime >= 0) {
-                                        $("#koiNewsul").html("距离超级锦鲤诞生 还剩："+transTime+"秒");
+                                        $("#koiNewsul").html("距离黄金小屋开启还剩"+transTime+"秒");
                                     }else{
                                         clearInterval(intervalForCutdown);
                                         $("#koiNewsul").html("超级锦鲤仍未出现，就等你来了！");

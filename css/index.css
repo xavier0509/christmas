@@ -95,13 +95,25 @@ body {
     left:1611px;
     background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/rule.png");
 }
+#mygift.btnFocus{
+    left:1115px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/newmygiftfocus.png");
+}
+#packlist.btnFocus{
+    left:1364px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/packlistfocus.png");
+}
+#rule.btnFocus{
+    left:1611px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/rulefocus.png");
+}
 .topBtnBorder{
     position: absolute;
     top:0;
     left:0;
     width: 250px;
     height: 104px;
-    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/border.png");
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/bordernew.png");
     display: none;
 }
 .btnFocus .topBtnBorder{
@@ -294,15 +306,20 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: white;
-    text-align: right;
+    text-align: center;
     display: none;
 }
 .coocaabtn.btnFocus:not(.topbtn):not(.banner){
     border: 4px solid white;
-    border-image-source:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png");
-    border-image-slice:8;
-    border-image-width:2;
-    border-image-repeat:round;
+    /*border-image-source:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png");*/
+    /*border-image-slice:8;*/
+    /*border-image-width:2;*/
+    /*border-image-repeat:round;*/
+    -webkit-border-image:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png") 8 /2 round; /* Safari 5 */
+    -o-border-image:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png") 8 /2 round; /* Opera */
+    -ms-border-image:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png") 8 /2 round; /* Opera */
+    -moz-border-image:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png") 8 /2 round; /* Opera */
+    border-image:url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/index/finalBannerBorder.png") 8 /2 round;;
 
     background-size: 100%;
 
