@@ -712,9 +712,9 @@ function setFocusInPack(haspack) {
             changeY = Math.floor(secondnum/5)*100;
         }else{
             if(firstnum!=-1){
-                changeY = 0;
+                changeY = 610;
             }else{
-                changeY = Math.floor(secondnum/5)*100 + 450;
+                changeY = Math.floor(secondnum/5)*300;
             }
         }
         $("#_jrbuyZoneInner").css("transform", "translate3D(0, -" + changeY + "px, 0)");

@@ -210,9 +210,9 @@ body {
     background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/more.png");
 }
 #_jrrecommendbox ._jrgoodsbox:nth-child(2) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/newedugoods.jpg");}
-#_jrrecommendbox ._jrgoodsbox:nth-child(3) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods1.jpg");}
-#_jrrecommendbox ._jrgoodsbox:nth-child(4) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods2.jpg");}
-#_jrrecommendbox ._jrgoodsbox:nth-child(5) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods3.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(3) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods2.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(4) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods3.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(5) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods1.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(6) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods4.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(7) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods5.jpg");}
 #_jrrecommendbox ._jrgoodsbox:nth-child(8) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods6.jpg");}
@@ -266,7 +266,7 @@ body {
 }
 #_jrrecommendzone{
     width: 1768px;
-    height: 400px;
+    height: 900px;
     position: relative;
     left: 0;
     right: 0;
