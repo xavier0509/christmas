@@ -35,9 +35,9 @@ var gameStatus = "";
 // var buyActiveId = "91";
 var adressIp = "https://restful.skysrt.com";
 var orderUrl = "https://api-business.skysrt.com/v3/order/genOrderByJsonp.html?data=";
-var actionId = "97";
-var goldActionId = "99";
-var buyActiveId = "98";
+var actionId = "102";
+var goldActionId = "100";
+var buyActiveId = "101";
 
 // var awardurl = "http://beta.webapp.skysrt.com/yuanbo/test/XmasNewYear2018/myaward.html?from=street";
 // var homeurl = "http://beta.webapp.skysrt.com/lxw/sd/index.html";
