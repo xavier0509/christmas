@@ -1,0 +1,1507 @@
+li {
+	list-style: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+    font-weight:bold; 
+}
+body {
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255, 255, 255, 0);
+}
+img[src='']{
+    visibility: hidden;
+}
+.none{
+	display: none;
+}
+#deviceready,.pagesboxes,.fullscreen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+}
+.pagesboxes,.fullscreen{
+	display: none;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#homePage{
+	background-image: url(../images/bg.jpg);
+}
+#ADPart1{
+	position: absolute;
+	top: 10px;
+	left: 593px;
+	height: 90px;
+	width: 180px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#awardInfoCard{
+	position: absolute;
+	top: 0;
+	left: 86px;
+	height: 143px;
+	width: 404px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#koiNews{
+	position: absolute;
+    top: 53px;
+    left: 104px;
+    height: 38px;
+    width: 365px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 21px;
+    overflow: hidden;
+    color: #fedf81;
+}
+#fakeNews{
+	position: absolute;
+    top: 93px;
+    left: 98px;
+    height: 50px;
+    margin: auto;
+    line-height: 50px;
+    width: 380px;
+    font-size: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#fakeNewsul,#koiNewsul{
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#fakeNewsul li{
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+#koiNewsul li{
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+}
+
+#bellNUmBox{
+	position: absolute;
+    top: 283px;
+    left: 688px;
+    height: 73px;
+    width: 168px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#bellnum{
+	position: absolute;
+    top: 25px;
+    left: 74px;
+    height: 40px;
+    width: 87px;
+    line-height: 40px;
+    font-size: 26px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 900;
+    background-color: rgba(0,0,0,0);
+}
+#santaClaus{
+	position: absolute;
+    top: 629px;
+    left: 128px;
+    height: 345px;
+    width: 218px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.fullImg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+#pullDown{
+	display: block;
+}
+#bulletinBoard{
+	position: absolute;
+    top: 645px;
+    left: 287px;
+    height: 166px;
+    width: 363px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: none;
+}
+#addGif{
+	position: absolute;
+	top: 10px;
+	right: 88px;
+	height: 97px;
+	width: 75px;
+}
+.homeBtns{
+	position: absolute;
+	display: block;
+	height: 300px;
+    width: 300px;
+	font-size: 40px;
+	text-align: center;
+}
+#myAward,#packList{
+	top: 25px;
+    left: 1412px;
+    width: 249px;
+    height: 103px;
+}
+#packList{
+	left: 1663px;
+}
+#activeRule{
+	position: absolute;
+    top: 128px;
+    left: 1696px;
+    width: 189px;
+    height: 83px;
+}
+#purchaseHome{
+	top: 333px;
+    left: 1330px;
+    height: 566px;
+    width: 437px;
+}
+#packHome{
+	top: 530px;
+    left: 854px;
+    height: 527px;
+    width: 410px;
+}
+#goldHome{
+	top: 200px;
+    left: 568px;
+    height: 477px;
+    width: 550px;
+}
+#goldGif{
+	position: absolute;
+	top: 303px;
+    left: 695px;
+    height: 99px;
+    width: 227px;
+    background-image: url(../images/house.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+}
+#koiList{
+	top: 269px;
+    left: 1201px;
+    height: 300px;
+    width: 275px;
+}
+#giftsShowBox{
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#giftsImgBox{
+	position: absolute;
+    top: 366px;
+    left: 346px;
+    width: 1226px;
+    height: 462px;
+    overflow: auto;
+}
+#giftsImgBox img{
+	width: 1226px;
+}
+#restArea{
+	top: 178px;
+    left: 211px;
+    height: 432px;
+    width: 254px;
+}
+.secondBtns{
+	position: absolute;
+	display: none;
+}
+#purchaseDialog{
+	top: 824px;
+    left: 1504px;
+    height: 175px;
+    width: 274px;
+}
+#goldDialog{
+	top: 300px;
+    left: 961px;
+    height: 147px;
+    width: 274px;
+}
+#restDialog{
+	top: 256px;
+    left: 408px;
+    height: 147px;
+    width: 314px;
+}
+#packGoodsBox{
+	top: 865px;
+    left: 710px;
+    height: 188px;
+    width: 689px;
+}
+#packGoodsBox,#restDialog,#goldDialog,#purchaseDialog{
+	background-repeat: no-repeat;
+    background-size: 100%;
+}
+#packGoodsDiv{
+	position: absolute;
+    top: 0px;
+    left: 75px;
+    height: 188px;
+    width: 545px;
+	overflow: hidden;
+}
+#packGoodsUl{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 180px;
+	width: 3640px;
+	font-size: 34px;
+    line-height: 46px;
+    font-size: 0;
+}
+#hasPackedGif{
+	position: absolute;
+	top: 30px;
+    left: 175px;
+    /*left: 355px;*/
+   	/*left: 535px;*/
+	height: 46px;
+	width: 46px;
+	display: none;
+}
+#packGoodsBox .packGoodsItem{
+	display: inline-block;
+    height: 156px;
+    width: 152px;
+    margin: 16px 15px;
+    background-image: url(../images/packboxitem.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+#packGoodsUl .btn-focus{
+	-webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    transition: transform 0.2s linear 0s;
+}
+#packedToast{
+	position: absolute;
+    bottom: 30px;
+    left: 827px;
+    height: 105px;
+    width: 481px;
+    background-image: url(../images/toast.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: none;
+}
+#packGoodsInfo{
+	position: absolute;
+    top: 733px;
+    left: 733px;
+    height: 123px;
+    width: 281px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+}
+.goodsImages{
+	position: relative;
+	display: inline-block;
+	top: 0;
+    left: 0;
+    margin: 18px;
+    height: 120px;
+    width: 116px;
+}
+.hasPackedImages{
+	position: relative;
+	display: inline-block;
+    top: -165px;
+    left: 95px;
+    height: 46px;
+    width: 46px;
+}
+#packGoodName{
+	position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 36px;
+    width: 235px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 900;
+    overflow: hidden;
+}
+#packGoodState{
+	position: absolute;
+    top: 53px;
+    left: 20px;
+    height: 36px;
+    width: 240px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 900;
+    overflow: hidden;
+}
+#packDialog{
+	top: 640px;
+    left: 648px;
+    height: 147px;
+    width: 274px;
+    padding-top: 17px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 32px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#koiListBox{
+	top: 138px;
+    left: 1463px;
+    height: 415px;
+    width: 304px;
+    overflow-y: hidden;
+   	background-size: 100%;
+   	background-repeat: no-repeat;
+}
+#koiListDiv{
+	position: absolute;
+    top: 67px;
+    left: 0px;
+    height: 267px;
+    width: 304px;
+    border-radius: 10px;
+    /*overflow: auto;*/
+   overflow: hidden;
+}
+#koiListDiv img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+#koiImg{
+	margin-top: 10px;
+	left: 0;
+	height: 1430px;
+	width: 304px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.koiListItem{
+	height: 60px;
+    width: 238px;
+    margin: 10px;
+    background-color: white;
+    line-height: 60px;
+    font-size: 34px;
+    text-align: center;
+}
+.imgBlur,.imgFocus{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+.imgBlur{
+	display: block;
+}
+.btn-focus .imgBlur{
+	display: none;
+}
+.btn-focus .imgFocus{
+	display: block;
+}
+
+#rulePage{
+    width:1920px;
+    height:1080px;
+    overflow: hidden;
+    display: none;
+}
+#ruleInner{
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    overflow: auto;
+    font-size: 0;
+}
+
+/*弹窗部分*/
+#dialogPage{
+	background-color: rgba(0,0,0,0.8);
+	display: none;
+}
+#firstLoadRule{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#firstLoadDraw{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#firstAwardInfo{
+	position: absolute;
+    top: 345px;
+    left: 740px;
+    height: 50px;
+    width: 440px;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    color: #fdff3a;
+}
+.drawAwards{
+	position: absolute;
+    top: 477px;
+    left: 678px;
+    height: 227px;
+    width: 197px;
+}
+#drawAward2{
+	left: 863px;
+}
+#drawAward3{
+	left: 1046px;
+}
+.fixedImg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+#nextTime{
+	position: absolute;
+    top: 700px;
+    left: 785px;
+    height: 150px;
+    width: 350px;
+}
+#redAwardImg{
+	position: absolute;
+    top: 417px;
+    left: 868px;
+    height: 232px;
+    width: 182px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+    display: none;
+}
+#redAwardNum{
+	position: absolute;
+    top: 54px;
+    left: 28px;
+    height: 50px;
+    width: 94px;
+    line-height: 50px;
+    font-size: 48px;
+    text-align: right;
+    color: #fc4450;
+}
+#redAwardUnit{
+	position: absolute;
+    height: 25px;
+    width: 20px;
+    top: 75px;
+    left: 125px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #fc4450;
+}
+#couponAwardImg{
+	position: absolute;
+    top: 453px;
+    left: 775px;
+    height: 160px;
+    width: 370px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+    display: none;
+}
+#entityAwardImg{
+	position: absolute;
+    top: 434px;
+    left: 872px;
+    height: 176px;
+    width: 176px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+    display: none;
+}
+
+/*#getRedBag{
+	position: absolute;
+    top: 700px;
+    left: 613px;
+    height: 150px;
+    width: 350px;
+}*/
+#close{
+	position: absolute;
+    top: 700px;
+    height: 150px;
+    width: 350px;
+	left: 785px;
+}
+#firstLoadAward{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#redInfo1{
+	position: absolute;
+    top: 410px;
+    left: 705px;
+    height: 60px;
+    width: 510px;
+    color: #FFFFFF;
+    line-height: 60px;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+#redInfo2{
+	position: absolute;
+    top: 450px;
+    left: 680px;
+    height: 336px;
+    width: 561px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#redQrcode{
+	position: absolute;
+    top: 541px;
+    left: 859px;
+    height: 180px;
+    width: 180px;
+    border: 10px solid white;
+}
+#firstEnName,#firstEnTime{
+	position: absolute;
+    top: 435px;
+    left: 720px;
+    height: 40px;
+    width: 470px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 40px;
+    color: #fcdd35;
+}
+#firstEnTime{
+	top: 480px;
+	font-size: 24px;
+	color: #FFFFFF;
+	font-weight: 100;
+}
+#entityQrcode{
+	position: absolute;
+    top: 550px;
+    left: 743px;
+    height: 190px;
+    width: 190px;
+    border: 5px solid white;
+}
+#firstEnInfo{
+	position: absolute;
+    top: 614px;
+    left: 965px;
+    height: 90px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 40px;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+#noFiveBellInfo{
+	position: absolute;
+    top: 480px;
+    left: 752px;
+    height: 60px;
+    width: 417px;
+    color: #FFFFFF;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 30px;
+    font-weight: 900;
+}
+#nofiveBellImg{
+	position: absolute;
+    top: 380px;
+    left: 708px;
+    height: 531px;
+    width: 509px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#fiveBellInfo2{
+	position: absolute;
+    top: 483px;
+    left: 690px;
+    height: 117px;
+    width: 545px;
+    line-height: 58px;
+    letter-spacing: 4px;
+    font-size: 36px;
+    color: #FFFFFF;
+    font-weight: 900;
+    text-align: center;
+}
+#fiveBellEnsure,#fiveBellCancel{
+	position: absolute;
+    top: 660px;
+    left: 792px;
+    height: 68px;
+    width: 147px;
+    line-height: 80px;
+}
+#fiveBellCancel{
+	left: 975px;
+}
+.santanbg,.milubg,.koibg,.koi2bg{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.santanbg{
+	background-image: url(../images/dialog/santan.png);
+}
+.milubg{
+	background-image: url(../images/dialog/milu.png);
+}
+.koibg{
+	background-image: url(../images/dialog/goodKoi.png);
+}
+.koi2bg{
+	background-image: url(../images/dialog/superKoi.png);
+}
+
+#hasEndBtn{
+	position: absolute;
+    top: 385px;
+    left: 690px;
+    height: 336px;
+    width: 561px;
+}
+#hasCloseBtn{
+	position: absolute;
+    top: 385px;
+    left: 690px;
+    height: 425px;
+    width: 542px;
+}
+#hasDoneBtn,#toLoginBtn,#notStartBtn{
+	position: absolute;
+    top: 400px;
+    left: 710px;
+    height: 507px;
+    width: 509px;
+}
+#hasLoginBtn{
+	position: absolute;
+    top: 375px;
+    left: 710px;
+    width: 509px;
+    height: 531px;
+}
+#thanks_info1,#thanks_info2,#thanks_info3{
+	position: absolute;
+    top: 418px;
+    left: 720px;
+    height: 48px;
+    width: 484px;
+    font-size: 36px;
+    color: #ffffff;
+    line-height: 48px;
+    text-align: center;
+    /*letter-spacing: 4px;*/
+}
+#thanks_info1{
+	font-weight: 900;
+}
+#thanks_info2{
+    top: 460px;
+    font-size: 22px;
+}
+#thanks_info3{
+    top: 675px;
+    font-size: 20px;
+    color: #fff842;
+    font-weight: 900;
+    overflow: hidden;
+}
+#thanks_giftsBox{
+	position: absolute;
+    top: 521px;
+    left: 717px;
+    height: 149px;
+    width: 479px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#thanks_coupon,#thanks_red,#thanks_entity{
+    position: absolute;
+    top: 9px;
+    left: 162px;
+    height: 130px;
+    width: 300px;
+}
+#thanks_couponImg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#thanks_redImg,#thanks_entityImg{
+	position: absolute;
+    top: 0;
+    left: 10px;
+    height: 130px;
+    width: 130px;
+}
+.redAwardBox{
+	position: absolute;
+    height: 100px;
+    width: 155px;
+    top: 15px;
+    left: 143px;
+    line-height: 46px;
+    font-size: 24px;
+    text-align: center;
+}
+#enAwardBox{
+	position: absolute;
+    height: 60px;
+    width: 155px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 153px;
+    font-size: 24px;
+}
+
+#redAwardName{
+	color: #757575;
+}
+#redAwardInfo{
+	color: #f04e48;
+}
+#thanks_btn1,#thanks_btn2{
+	position: absolute;
+    top: 720px;
+    left: 765px;
+    height: 68px;
+    width: 147px;
+}
+#thanks_btn2{
+	left: 945px;
+	width: 210px;
+}
+.btnName{
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 68px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+#koiMouldImg{
+	position: absolute;
+    top: 345px;
+    left: 640px;
+    height: 545px;
+    width: 640px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#superKoiInfo,#getKoiInfo{
+	position: absolute;
+    top: 452px;
+    left: 750px;
+    height: 50px;
+    width: 430px;
+    font-size: 24px;
+    line-height: 50px;
+    color: #ffffff;
+    text-align: center;
+}
+#superKoiInfo{
+    top: 416px;
+    width: 420px;
+    font-size: 18px;
+    display: none;
+}
+#awardImgShow{
+	position: absolute;
+    top: 530px;
+    left: 765px;
+    height: 200px;
+    width: 400px;
+}
+.thisDrawAwardImg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+#entityImgPart{
+	position: absolute;
+	top: 6px;
+    left: 94px;
+    height: 200px;
+    width: 200px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#getAwardNum{
+	position: absolute;
+    top: 50px;
+    left: 150px;
+    height: 50px;
+    width: 75px;
+    line-height: 50px;
+    font-size: 38px;
+    text-align: center;
+    color: #fc4450;
+}
+#getAwardUnit{
+	position: absolute;
+    height: 25px;
+    width: 20px;
+    top: 67px;
+    left: 227px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #fc4450;
+}
+#getDrawRedInfo{
+	position: absolute;
+    top: 72px;
+    left: 85px;
+    height: 60px;
+    width: 465px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-weight: 900;
+}
+#line{
+    position: absolute;
+    top: 135px;
+    color: white;
+    height: 1px;
+    left: 85px;
+    width: 469px;
+    font-size: 18px;
+    overflow: hidden;
+    border-bottom: 1px dashed white;
+}
+#getDrawInfo1{
+	position: absolute;
+    top: 152px;
+    left: 140px;
+    height: 40px;
+    width: 360px;
+    line-height: 40px;
+    font-size: 24px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 3px;
+    overflow: hidden;
+}
+#getDrawInfo2{
+    position: absolute;
+    top: 408px;
+    left: 140px;
+    height: 40px;
+    width: 360px;
+    line-height: 40px;
+    font-size: 18px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 3px;
+    overflow: hidden;
+}
+#getDrawRedQrcode{
+	position: absolute;
+    top: 203px;
+    left: 218px;
+    height: 180px;
+    width: 180px;
+    border:10px solid white;
+}
+#getDrawEnName,#getDrawEnTime{
+	position: absolute;
+    width: 365px;
+    left: 135px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+}
+#getDrawEnName{
+	top: 55px;
+	font-size: 30px;
+	color: #FCDD35;
+}
+#getDrawEnTime{
+	top: 100px;
+	font-size: 24px;
+	color: #FFFFFF;
+}
+#getDrawRedBG,#getDrawEnBG{
+	position: absolute;
+    top: 345px;
+    left: 640px;
+    height: 545px;
+    width: 640px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#getDrawEnBG{
+	background-image: url(../images/dialog/entityQrcode.png);
+}
+#getDrawEnQrcode{
+	position: absolute;
+    top: 222px;
+    left: 117px;
+    height: 180px;
+    width: 180px;
+    border: 10px solid white;
+}
+#redQrcodePart,#entityQrcodePart{
+	position: absolute;
+    top: 0;
+    left: 200px;
+    height: 180px;
+    width: 180px;
+    border: 10px solid white;
+}
+#couponImgPart{
+	position: absolute;
+	top: 15px;
+    left: 13px;
+    height: 170px;
+    width: 376px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#curAwardInfo{
+	position: absolute;
+    top: 755px;
+    left: 830px;
+    font-size: 24px;
+    color: white;
+    font-weight: 900;
+    display: none;
+}
+#koibtn1,#koibtn2,#koi2btn1,#koi2btn2{
+	position: absolute;
+    top: 805px;
+    left: 805px;
+    height: 68px;
+    width: 147px;	
+}
+#packIsOverBg{
+	position: absolute;
+    top: 385px;
+    left: 711px;
+    height: 531px;
+    width: 509px;
+    background-image: url(../images/dialog/packisover.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#packIsOverBtn1,#packIsOverBtn2{
+	position: absolute;
+    top: 715px;
+    left: 805px;
+    height: 68px;
+    width: 147px;
+}
+#packIsOverBtn2{
+	left: 987px;
+}
+#koibtn2,#koi2btn2{
+	left: 987px;
+}
+#koiMouldImg2{
+	position: absolute;
+    top: 516px;
+    left: 240px;
+    height: 180px;
+    width: 180px;
+    border: 10px solid white;
+    background-color: white;
+}
+#getKoi2Box{
+	position: absolute;
+	top: 75px;
+	left: 484px;
+	height: 927px;
+	width: 952px;
+	background-image: url(../images/dialog/koi2Info.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#startDrawBox{
+	background-color: rgba(0,0,0,0.6);
+}
+#startDrawBox2{
+	position: absolute;
+	top: 0;
+	left: 74px;
+	height: 1080px;
+	width: 1772px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#awardAwardBox{
+    position: absolute;
+    top: 360px;
+    left: 670px;
+    width: 426px;
+    height: 239px;
+    overflow: hidden;
+}
+.slot1{
+	background-image: url(../images/award/1.jpg);
+}
+.slot2{
+	background-image: url(../images/award/2.jpg);
+}
+.slot3{
+	background-image: url(../images/award/3.jpg);
+}
+.slot4{
+	background-image: url(../images/award/4.jpg);
+}
+.slot5{
+	background-image: url(../images/award/5.jpg);
+}
+.slot6{
+	background-image: url(../images/award/6.jpg);
+}
+.slot7{
+	background-image: url(../images/award/7.jpg);
+}
+.slot8{
+	background-image: url(../images/award/8.jpg);
+}
+.slot9{
+	background-image: url(../images/award/9.jpg);
+}
+.slot10{
+	background-image: url(../images/award/10.jpg);
+}
+
+.machineContainer{
+	position: absolute;
+    top: 360px;
+    left: 745px;
+    height: 239px;
+    width: 426px;
+    overflow: hidden;
+}
+.slotMachine{
+	height: 239px;
+	width: 426px;
+	overflow: hidden;
+	display: inline-block;
+	background-color: rgba(255,255,255,0);
+}
+.slotMachine .slot{
+	height:239px;
+	width: 426px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-size: 68px;
+	text-align: center;
+	line-height: 239px;
+}
+/*采购小屋*/
+#_jrbuyZone{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 1920px;
+    height:1080px;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/finalbuyzonebg123.jpg");
+    overflow: hidden;
+    display: none;
+}
+#_jrbuyZoneGuding{
+    width: 1768px;
+    height:765px;
+    position: absolute;
+    left:69px;
+    top:289px;
+    overflow: hidden;
+}
+#_jrbuyZoneInner{
+    width: 1768px;
+    transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+}
+#_jrpackzone{
+    width: 1768px;
+    height: 474px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+#_jrpackword{
+    width: 542px;
+    height: 62px;
+    position: absolute;
+    top:0;
+    left:10px;
+    right: 0;
+    margin: auto;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/mayliketitle.png");
+}
+#_jrrecommendword{
+    width: 760px;
+    height: 62px;
+    position: absolute;
+    top:0;
+    left:10px;
+    right: 0;
+    margin: auto;
+    background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/superPrice.png");
+}
+#_jrpackbox,#_jrrecommendbox{
+    width: 1768px;
+    position: relative;
+    top:70px;
+    padding-left: 33px;
+}
+._jrgoodsbox{
+    height: 404px;
+    width: 374px;
+    display: inline-block;
+    margin-left: -26px;
+    margin-top: -17px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+._jrborder{
+    height: 404px;
+    width: 374px;
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/focus.png");
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+._jrborder.special{
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/morefocus.png");
+}
+._jrgoods{
+    height: 318px;
+    width: 318px;
+    margin-left: 15px;
+    margin-top: 40px;
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/packbg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.special._jrgoods{
+    background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/more.png");
+}
+.couponword{
+    width: 291px;
+    position: absolute;
+    bottom: 142px;
+    left: 27px;
+    background-color: #dc443d;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #ffff00;
+    text-align: center;
+    font-weight: 900;
+}
+.goodsName{
+    font-size: 24px;
+    color: #883800;
+    line-height: 24px;
+    position: absolute;
+    top: 280px;
+    left:28px;
+    font-weight: 900;
+}
+.nowPrice{
+    font-size: 24px;
+    color: #dc443d;
+    position: absolute;
+    left:28px;
+    top:305px;
+    font-weight: 900;
+}
+.oldPrice{
+    font-size: 20px;
+    color: #883800;
+    position: absolute;
+    left:128px;
+    top:309px;
+    font-weight: 900;
+}
+.goodsImg{
+    position: absolute;
+    width: 290px;
+    height:213px;
+    left:28px;
+    top:50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#_jrrecommendzone{
+    width: 1768px;
+    height: 900px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#_jrrecommendbox ._jrgoodsbox:nth-child(2) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/newedugoods.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(3) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods2.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(4) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods3.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(5) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods1.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(6) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods4.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(7) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods5.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(8) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods6.jpg");}
+#_jrrecommendbox ._jrgoodsbox:nth-child(9) ._jrgoods{background-image: url("http://sky.fs.skysrt.com/statics/webvip/webapp/christmas/buyzone/goods7.jpg");}
+
+/*打包商品页*/
+.goodsContainerClass {
+	position: absolute;
+	left: 180px;
+	display: none;
+}
+
+#packGoodsContainer {
+	top: 156px;	
+}
+#moreGoodsContainer {
+	top: 552px;
+}
+
+.goodsTitleClass {
+	position: relative;
+	left: 475px;
+	width: 617px;
+	height: 50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#packGoodsListOuterContainerId {
+	position: absolute;
+	top: 70px;
+	width: 1740px;
+	height: 798px;
+	overflow: hidden;
+}
+.goodsListClass {
+	position: relative;
+}
+
+.goodsItemClass {
+	position: relative;
+	display: inline-block;
+	width: 301px;
+	height: 332px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 10px 62px 0;
+}
+.goodsItemPlaceHolderClass {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/packlist/goods-placeholder.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#packGoodsList .goodsItemClass[class~=btn-focus] {
+	background-image: url(../images/packlist/focus.png);
+}
+#moregoodsList .goodsItemClass[class~=btn-focus] {
+	background-image: url(../images/packlist/focus.png);
+}
+
+.packGoodsItemPic {
+	position: absolute;
+	top: 25px;
+	left: 30px;
+	width: 241px;
+	height: 177px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 2;
+}
+
+.packGoodsItemName {
+	position: absolute;
+	top: 212px;
+	width: 215px;
+	margin: 0px 43px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 24px;
+	font-weight: 900;
+	color: #7a2920;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.packGoodsItemLabel {
+    position: absolute;
+    top: 244px;
+    height: 24px;
+    width: 215px;
+    margin: 0 43px;
+}
+
+.packGoodsItemLabelPriceNow {
+	position: absolute;
+	display: inline-block;
+	line-height: 24px;
+	font-size: 24px;
+	color: #F70400;
+	font-weight: 900;
+}
+.packGoodsItemLabelTip {
+	position: absolute;
+	left: 95px;
+	display: inline-block;
+	line-height: 24px;
+	font-size: 20px;
+	font-weight: 900;
+	color: #3e3e3e;
+}
+.packGoodsItemLabelPriceOld {
+	position: absolute;
+	display: inline-block;
+	left: 145px;
+	line-height: 24px;
+	font-size: 20px;
+	font-weight: 900;
+	color: #3e3e3e;
+	text-decoration: line-through;
+}
+#toastEmpty,#toastEnd {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	-webkit-transform: translate(-50%, -45%);
+	background-repeat: no-repeat;
+	display: none;
+}
+#toastEmpty {
+	width: 981px;
+	height: 485px;
+}
+#toastEnd {
+	width: 980px;
+	height: 483px;
+}
+#blackBg {
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+    -moz-opacity: 0.8;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    z-index: 3;
+}
+#needUpdate{
+    width: 1134px;
+    height:308px;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+    display: none;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+}
+::-webkit-scrollbar-button {
+	display: none;
+}
+::-webkit-scrollbar-thumb {
+	padding-left: 0px;
+	border-radius: 0px;
+	border: solid 1px rgba(255,255,255,0);
+	background-color: rgba(255, 255, 255, 0);
+}
